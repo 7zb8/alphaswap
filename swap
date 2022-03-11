@@ -77,7 +77,7 @@ def generateUSER_AGENT():
 
 d, p, e = 0, 0, 0
 os.system('cls' if os.name == 'nt' else 'clear')
-print(f"""{c1}
+print(f"""\x1b[36m\x1b[40m
 
        ___    __    ___    __ __   ___         ____  _      __   ___    ___ 
       / _ |  / /   / _ \  / // /  / _ |       / __/ | | /| / /  / _ |  / _ |
