@@ -87,7 +87,7 @@ print(f"""
     /_/ |_|/____//_/    /_//_/  /_/ |_|     /___/   |__/|__/  /_/ |_|/_/ 
 
 {c2}""")
-SIS = input(f'{c1}  #{c2} , Enter Sessionid : {c1}')
+SIS = getpass.getpass(f'{c1}  #{c2} , Enter Sessionid : {c1}')
 SES = {'sessionid': SIS}
 try:
 
