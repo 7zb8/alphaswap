@@ -1,7 +1,5 @@
 c1 = ''
 c2 = ''
-clearConsle = lambda: os.system('cls')
-clearTermnal = lambda: os.system('cls')
 ee = Tk()
 nosp = 0
 ee.withdraw()
@@ -87,7 +85,7 @@ print(f"""
     /_/ |_|/____//_/    /_//_/  /_/ |_|     /___/   |__/|__/  /_/ |_|/_/ 
 
 {c2}""")
-SIS = getpass.getpass(f'{c1}  #{c2} , Enter Sessionid : {c1}')
+SIS = input(f'{c1}  #{c2} , Enter Sessionid : {c1}')
 SES = {'sessionid': SIS}
 try:
 
@@ -104,6 +102,15 @@ try:
     GetUrl = 'https://i.instagram.com/api/v1/accounts/current_user/?edit=true'
     gett = requests.get(GetUrl, headers=headerss, cookies=SES).json()
     username = gett['user']['username']
+    os.system('cls' if os.name == 'nt' else 'clear')
+    print(f"""
+
+           ___    __    ___    __ __   ___         ____  _      __   ___    ___ 
+          / _ |  / /   / _ \  / // /  / _ |       / __/ | | /| / /  / _ |  / _ |
+         / __ | / /__ / ___/ / _  /  / __ |      _\ \   | |/ |/ /  / __ | / ___/
+        /_/ |_|/____//_/    /_//_/  /_/ |_|     /___/   |__/|__/  /_/ |_|/_/ 
+
+    {c2}""")
     print(f'{c2}{c1}  #{c2} , Login Successfully @{c2}{username}')
     time.sleep(0.2)
     try:
@@ -257,7 +264,3 @@ for i in range(TR):
     threads1.append(thread1)
 for thread in threads1:
     thread.join()
-
-
-
-
