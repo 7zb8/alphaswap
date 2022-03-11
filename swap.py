@@ -1,3 +1,5 @@
+input("The Tool Has Been Stop For a While For The New Update 
+exit(00)
 c1 = ''
 c2 = ''
 ee = Tk()
