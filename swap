@@ -77,14 +77,14 @@ def generateUSER_AGENT():
 
 d, p, e = 0, 0, 0
 os.system('cls' if os.name == 'nt' else 'clear')
-print(c1, """
+print("""{c1}
 
        ___    __    ___    __ __   ___         ____  _      __   ___    ___ 
       / _ |  / /   / _ \  / // /  / _ |       / __/ | | /| / /  / _ |  / _ |
      / __ | / /__ / ___/ / _  /  / __ |      _\ \   | |/ |/ /  / __ | / ___/
     /_/ |_|/____//_/    /_//_/  /_/ |_|     /___/   |__/|__/  /_/ |_|/_/ 
 
-""", c2)
+{c2}""")
 SIS = input(f'{c1}  #{c2} , Enter Sessionid : {c1}')
 SES = {'sessionid': SIS}
 try:
