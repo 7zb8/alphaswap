@@ -1,5 +1,5 @@
 input("The Tool Has Been Stop For a While For The New Update")
-exit(00)
+exit(0)
 c1 = ''
 c2 = ''
 ee = Tk()
