@@ -7,12 +7,25 @@ emaa = []
 Si = []
 f = []
 os.system('mode con: cols=83 lines=20')
-SettingsO=[]
+SettingsO = []
 os.system(f"title #ALPHA SWAP")
 os.system('cls' if os.name == 'nt' else 'clear')
 Token = string.ascii_lowercase + string.ascii_uppercase + string.digits
 TOKEN = (''.join(random.choice(Token) for i in range(30)))
-def RandomStringUpper(n = 10):
+try:
+    TEXT = requests.get('https://pastebin.com/raw/1QUpyQNZ').text
+    GetIP = requests.get('https://api.ipify.org?format=json').text
+    GETIP = re.findall('{"ip":"(.*?)"}', GetIP)
+    IP = " ".join(GETIP)
+    if IP in TEXT:
+        pass
+    else:
+        print(f'{c2}{c1}  x{c2} , Sorry You Can Not Access To This Tool [{IP}]')
+        exit()
+except:
+    exit()
+
+def RandomStringUpper(n=10):
     letters = string.ascii_uppercase + '1234567890'
     return ''.join(random.choice(letters) for i in range(n))
 
@@ -36,6 +49,8 @@ def randomStringWithChar(stringLength=10):
     letters = string.ascii_lowercase + '1234567890'
     result = ''.join(random.choice(letters) for i in range(stringLength - 1))
     return RandomStringChars(1) + result
+
+
 ###########################################################login#######################################################
 def generateUSER_AGENT():
     Devices_menu = ['HUAWEI', 'Xiaomi', 'samsung', 'OnePlus']
@@ -58,30 +73,32 @@ def generateUSER_AGENT():
     }
     return '{Host} 155.0.0.37.107 {system} ({android_version}/{android_release}; {dpi}dpi; {resolution}; {manufacturer}; {model}; {cpu}; {randomL}; en_US)'.format(
         **DEVICE_SETTINTS)
-d,p,e = 0,0,0
-os.system('cls' if os.name == 'nt' else 'clear')      
-print(c1,"""
+
+
+d, p, e = 0, 0, 0
+os.system('cls' if os.name == 'nt' else 'clear')
+print(c1, """
 
        ___    __    ___    __ __   ___         ____  _      __   ___    ___ 
       / _ |  / /   / _ \  / // /  / _ |       / __/ | | /| / /  / _ |  / _ |
      / __ | / /__ / ___/ / _  /  / __ |      _\ \   | |/ |/ /  / __ | / ___/
     /_/ |_|/____//_/    /_//_/  /_/ |_|     /___/   |__/|__/  /_/ |_|/_/ 
-                                                                            
-""",c2)
+
+""", c2)
 SIS = input(f'{c1}  #{c2} , Enter Sessionid : {c1}')
-SES = {'sessionid':SIS}
+SES = {'sessionid': SIS}
 try:
 
     headerss = {
-    'User-Agent': generateUSER_AGENT(),
-    "Accept": "*/*",
-    "Accept-Encoding": "gzip, deflate",
-    "Accept-Language": "en-US",
-    "X-IG-Capabilities": "3brTvw==",
-    "X-IG-Connection-Type": "WIFI",
-    "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
-    'Host': 'i.instagram.com',
-    'Connection': 'keep-alive'}
+        'User-Agent': generateUSER_AGENT(),
+        "Accept": "*/*",
+        "Accept-Encoding": "gzip, deflate",
+        "Accept-Language": "en-US",
+        "X-IG-Capabilities": "3brTvw==",
+        "X-IG-Connection-Type": "WIFI",
+        "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+        'Host': 'i.instagram.com',
+        'Connection': 'keep-alive'}
     GetUrl = 'https://i.instagram.com/api/v1/accounts/current_user/?edit=true'
     gett = requests.get(GetUrl, headers=headerss, cookies=SES).json()
     username = gett['user']['username']
@@ -120,6 +137,8 @@ try:
         GIF = " ".join(GIDD)
         print(f'{c2}{c1}  #{c2} , Done Grab Settings')
         time.sleep(0.2)
+
+
         def Check():
             print(f'{c2}{c1}  #{c2} , Checking Block {c1}..{c2}')
             changeUrl = 'https://i.instagram.com/api/v1/accounts/edit_profile/'
@@ -130,17 +149,19 @@ try:
             data["external_url"] = ""
             data['_csrftoken'] = 'massing'
             data["phone_number"] = ""
-            data["username"] = username+'.checkblock'
+            data["username"] = username + '.checkblock'
             data["first_name"] = ""
             data["biograph"] = ""
             data["email"] = email
-            Swap = requests.post(changeUrl, headers=headerss, data=data,cookies=SES).text
+            Swap = requests.post(changeUrl, headers=headerss, data=data, cookies=SES).text
             if ('"status":"ok"') in Swap:
                 print(f'{c2}{c1}  #{c2} , Account Is Work')
             elif ('"login_required"') in Swap:
                 print(f'{c2}{c1}  x{c2} , Please Use A Api Session Not Web !')
 
                 input(f'{c2}{c1}  x{c2} , Account Is Not Working !')
+
+
         Check()
         Target = input(f'{c2}{c1}  #{c2} , Enter Target : {c1}')
         THE = int(input(f'{c1}  #{c2} , Enter Thread : {c1}'))
@@ -149,8 +170,6 @@ try:
 
 except:
     input(f'{c2}{c1}  x{c2} , Sessionid Is Not Working !')
-
-
 
 
 def swapped():
@@ -170,14 +189,18 @@ def swapped():
         except:
             pass
         try:
-            requests.post('https://i.instagram.com/api/v1/accounts/set_biography/', data={"raw_text": BIO},headers=headerss, cookies=SES)
-            requests.post('https://i.instagram.com/api/v1/accounts/set_phone_and_name/', data={"first_name": NAME},headers=headerss, cookies=SES)
+            requests.post('https://i.instagram.com/api/v1/accounts/set_biography/', data={"raw_text": BIO},
+                          headers=headerss, cookies=SES)
+            requests.post('https://i.instagram.com/api/v1/accounts/set_phone_and_name/', data={"first_name": NAME},
+                          headers=headerss, cookies=SES)
         except:
             pass
-        ctypes.windll.user32.MessageBoxW(0,f'{MSGAX} @{Target}','#ALPHA SWAP')
+        ctypes.windll.user32.MessageBoxW(0, f'{MSGAX} @{Target}', '#ALPHA SWAP')
         exit()
+
+
 def editprofile():
-    global d,e
+    global d, e
     url1 = 'https://i.instagram.com/api/v1/accounts/edit_profile/'
     data = {}
     data["_uid"] = f"47641699268"
@@ -190,32 +213,40 @@ def editprofile():
     data["first_name"] = ""
     data["biograph"] = ""
     data["email"] = email
-    SwapA = requests.post(url1, headers=headerss, data=data,cookies=SES)
+    SwapA = requests.post(url1, headers=headerss, data=data, cookies=SES)
     if ('"status":"ok"') in SwapA.text:
         swapped()
     elif SwapA.status_code == 400:
-        d+=1
+        d += 1
         os.system(f"title ATM : {d} / ERROR : {e}")
     else:
-        e+=1
+        e += 1
         os.system(f"title ATM : {d} / ERROR : {e}")
+
+
 def set_user():
-    global d,e
+    global d, e
     url2 = 'https://i.instagram.com/api/v1/accounts/set_username/'
-    data2 = {'username':Target}
-    SwapS = requests.post(url2, headers=headerss, data=data2,cookies=SES)
+    data2 = {'username': Target}
+    SwapS = requests.post(url2, headers=headerss, data=data2, cookies=SES)
     if ('"status":"ok"') in SwapS.text:
         swapped()
     elif SwapS.status_code == 400:
-        d+=1
+        d += 1
         os.system(f"title ATM : {d} / ERROR : {e}")
     else:
-        e+=1
+        e += 1
         os.system(f"title ATM : {d} / ERROR : {e}")
-tkinter.messagebox.showwarning('#ALPHA SWAP',f'Ready ?\nTarget : {Target}\nThread : {THE}')
+
+
+tkinter.messagebox.showwarning('#ALPHA SWAP', f'Ready ?\nTarget : {Target}\nThread : {THE}')
+
+
 def chose():
-    modes = [editprofile(),set_user()]
+    modes = [editprofile(), set_user()]
     return random.choice(modes)
+
+
 threads1 = []
 TR = int(THE)
 for i in range(TR):
@@ -224,3 +255,7 @@ for i in range(TR):
     threads1.append(thread1)
 for thread in threads1:
     thread.join()
+
+
+
+
