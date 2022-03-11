@@ -20,7 +20,7 @@ try:
     if IP in TEXT:
         pass
     else:
-        print(f'{c2}{c1}  x{c2} , Sorry You Can Not Access To This Tool [{IP}]')
+        input(f'{c2}{c1}  x{c2} , Sorry You Can Not Access To This Tool [{IP}]')
         exit(1)
 except:
     exit(1)
