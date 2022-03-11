@@ -171,6 +171,7 @@ try:
             else:
                 input(f'{c2}{c1}  x{c2} , Account Is Not Working !')
         def conferm():
+            print(f'{c2}{c1}  #{c2} , Sending Confirm  {c1}..{c2}')
             urlconf = 'https://www.instagram.com/accounts/send_confirm_email/'
             headersww = {
                 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36',
@@ -185,8 +186,9 @@ try:
                     pass
                 else:
                     exit(0)
-        conferm()
+
         Check()
+        conferm()
         Target = input(f'{c2}{c1}  #{c2} , Enter Target : {c1}')
         THE = int(input(f'{c1}  #{c2} , Enter Thread : {c1}'))
     except:
