@@ -1,5 +1,5 @@
-c1 = colorama.Fore.RED
-c2 = colorama.Fore.RESET
+c1 = '\x1b[1;31;40m'
+c2 = '\x1b[1;37;40m'
 ee = Tk()
 nosp = 0
 ee.withdraw()
