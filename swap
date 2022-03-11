@@ -1,5 +1,5 @@
-c1 = '\x1b[31m\x1b[40m'
-c2 = '\x1b[1;37;40m'
+c1 = ''
+c2 = ''
 clearConsle = lambda: os.system('cls')
 clearTermnal = lambda: os.system('cls')
 ee = Tk()
