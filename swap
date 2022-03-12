@@ -1,6 +1,7 @@
 c1 = ''
 c2 = ''
 ee = Tk()
+LO = Lock()
 nosp = 0
 ee.withdraw()
 emaa = []
@@ -265,8 +266,7 @@ def editprofile():
     try:
         SwapA = requests.post(url1, headers=headerss, data=data, cookies=SES)
         if ('"status":"ok"') in SwapA.text:
-            with LO:
-                return swapped()
+            swapped()
         elif SwapA.status_code == 400:
             d += 1
             os.system(f"title ATM : {d} / ERROR : {e}")
@@ -285,8 +285,7 @@ def set_user():
     try:
         SwapS = requests.post(url2, headers=headerss, data=data2, cookies=SES)
         if ('"status":"ok"') in SwapS.text:
-            with LO:
-                return swapped()
+            swapped()
         elif SwapS.status_code == 400:
             d += 1
             os.system(f"title ATM : {d} / ERROR : {e}")
