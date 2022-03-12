@@ -1,7 +1,6 @@
 c1 = ''
 c2 = ''
 ee = Tk()
-LO = Lock()
 nosp = 0
 ee.withdraw()
 emaa = []
