@@ -1,14 +1,13 @@
-input("The Tool Has Been Stopped a While For The New Update")
-exit(1)
 c1 = ''
 c2 = ''
 ee = Tk()
+LO = Lock()
 nosp = 0
 ee.withdraw()
 emaa = []
 Si = []
 f = []
-os.system('mode con: cols=83 lines=20')
+os.system('mode con: cols=80 lines=20')
 SettingsO = []
 os.system(f"title #ALPHA SWAP")
 os.system('cls' if os.name == 'nt' else 'clear')
@@ -81,16 +80,17 @@ d, p, e = 0, 0, 0
 os.system('cls' if os.name == 'nt' else 'clear')
 print(f"""
 
-       ___    __    ___    __ __   ___         ____  _      __   ___    ___ 
-      / _ |  / /   / _ \  / // /  / _ |       / __/ | | /| / /  / _ |  / _ |
-     / __ | / /__ / ___/ / _  /  / __ |      _\ \   | |/ |/ /  / __ | / ___/
-    /_/ |_|/____//_/    /_//_/  /_/ |_|     /___/   |__/|__/  /_/ |_|/_/ 
-
+     ██╗ ██╗  █████╗ ██╗     ██████╗ ██╗  ██╗ █████╗     ██╗   ██╗██████╗ 
+    ████████╗██╔══██╗██║     ██╔══██╗██║  ██║██╔══██╗    ██║   ██║╚════██╗
+    ╚██╔═██╔╝███████║██║     ██████╔╝███████║███████║    ██║   ██║ █████╔╝
+    ████████╗██╔══██║██║     ██╔═══╝ ██╔══██║██╔══██║    ╚██╗ ██╔╝██╔═══╝ 
+    ╚██╔═██╔╝██║  ██║███████╗██║     ██║  ██║██║  ██║     ╚████╔╝ ███████╗
+     ╚═╝ ╚═╝ ╚═╝  ╚═╝╚══════╝╚═╝     ╚═╝  ╚═╝╚═╝  ╚═╝      ╚═══╝  ╚══════╝
+     
 {c2}""")
-SIS = input(f'{c1}  #{c2} , Enter Sessionid : {c1}')
+SIS = input(f'  | ? | Enter Sessionid : {c1}')
 SES = {'sessionid': SIS}
 try:
-
     headerss = {
         'User-Agent': generateUSER_AGENT(),
         "Accept": "*/*",
@@ -106,110 +106,132 @@ try:
     username = gett['user']['username']
     os.system('cls' if os.name == 'nt' else 'clear')
     print(f"""
-
-       ___    __    ___    __ __   ___         ____  _      __   ___    ___ 
-      / _ |  / /   / _ \  / // /  / _ |       / __/ | | /| / /  / _ |  / _ |
-     / __ | / /__ / ___/ / _  /  / __ |      _\ \   | |/ |/ /  / __ | / ___/
-    /_/ |_|/____//_/    /_//_/  /_/ |_|     /___/   |__/|__/  /_/ |_|/_/ 
+    
+     ██╗ ██╗  █████╗ ██╗     ██████╗ ██╗  ██╗ █████╗     ██╗   ██╗██████╗ 
+    ████████╗██╔══██╗██║     ██╔══██╗██║  ██║██╔══██╗    ██║   ██║╚════██╗
+    ╚██╔═██╔╝███████║██║     ██████╔╝███████║███████║    ██║   ██║ █████╔╝
+    ████████╗██╔══██║██║     ██╔═══╝ ██╔══██║██╔══██║    ╚██╗ ██╔╝██╔═══╝ 
+    ╚██╔═██╔╝██║  ██║███████╗██║     ██║  ██║██║  ██║     ╚████╔╝ ███████╗
+     ╚═╝ ╚═╝ ╚═╝  ╚═╝╚══════╝╚═╝     ╚═╝  ╚═╝╚═╝  ╚═╝      ╚═══╝  ╚══════╝
 
     {c2}""")
-    print(f'{c2}{c1}  #{c2} , Login Successfully @{c2}{username}')
+    print(f'  | √ | Login Successfully @{c2}{username}')
     time.sleep(0.2)
     try:
         email = gett['user']['email']
-        print(f'{c2}{c1}  #{c2} , Done Grab E-mail')
+        print(f'  | √ | Done Grab E-mail')
         time.sleep(0.2)
-        see = open('settings.txt', 'r').read().splitlines()
-        for i in see:
-            SettingsO.append(i)
-        bio = SettingsO[0]
-        firstname = SettingsO[1]
-        webhook = SettingsO[2]
-        MMSGP = SettingsO[3]
-        MSGB = SettingsO[4]
-        FGIF = SettingsO[5]
-        B = re.findall('bio : {(.*?)}', bio)
-        BIO = " ".join(B)
-        ###
-        NA = re.findall('firstname : {(.*?)}', firstname)
-        NAME = " ".join(NA)
-        ###
-        ###
-        WEB = re.findall('webhook : {(.*?)}', webhook)
-        HOOK = " ".join(WEB)
-        ###
-        MSG = re.findall('msg : {(.*?)}', MMSGP)
-        MSGA = " ".join(MSG)
-        ##
-        MSGBOX = re.findall('msgbox : {(.*?)}', MSGB)
-        MSGAX = " ".join(MSGBOX)
-        ##
-        GIDD = re.findall('gif : {(.*?)}', FGIF)
-        GIF = " ".join(GIDD)
-        print(f'{c2}{c1}  #{c2} , Done Grab Settings')
-        time.sleep(0.2)
-
-
+        try:
+            see = open('settings.txt', 'r').read().splitlines()
+            for i in see:
+                SettingsO.append(i)
+            bio = SettingsO[0]
+            firstname = SettingsO[1]
+            webhook = SettingsO[2]
+            MMSGP = SettingsO[3]
+            MSGB = SettingsO[4]
+            FGIF = SettingsO[5]
+            B = re.findall('bio : {(.*?)}', bio)
+            BIO = " ".join(B)
+            ###
+            NA = re.findall('firstname : {(.*?)}', firstname)
+            NAME = " ".join(NA)
+            ###
+            ###
+            WEB = re.findall('webhook : {(.*?)}', webhook)
+            HOOK = " ".join(WEB)
+            ###
+            MSG = re.findall('msg : {(.*?)}', MMSGP)
+            MSGA = " ".join(MSG)
+            ##
+            MSGBOX = re.findall('msgbox : {(.*?)}', MSGB)
+            MSGAX = " ".join(MSGBOX)
+            ##
+            GIDD = re.findall('gif : {(.*?)}', FGIF)
+            GIF = " ".join(GIDD)
+            print(f'  | √ | Done Grab Settings')
+            time.sleep(0.2)
+        except:
+            input(f'  | x | Settings File Not Found !')
+            exit()
         def Check():
-            print(f'{c2}{c1}  #{c2} , Checking Block {c1}..{c2}')
-            changeUrl = 'https://i.instagram.com/api/v1/accounts/edit_profile/'
-            data = {}
-            data["_uid"] = f"47641699268"
-            data["device_id"] = "android-d595db3f5c276071"
-            data["_uuid"] = uuid.uuid4(),
-            data["external_url"] = ""
-            data['_csrftoken'] = 'massing'
-            data["phone_number"] = ""
-            data["username"] = username + '.checkblock'
-            data["first_name"] = ""
-            data["biograph"] = ""
-            data["email"] = email
-            Swap = requests.post(changeUrl, headers=headerss, data=data, cookies=SES).text
-            if ('"status":"ok"') in Swap:
-                print(f'{c2}{c1}  #{c2} , Account Is Work')
-            elif ('"login_required"') in Swap:
-                print(f'{c2}{c1}  x{c2} , Please Use A Api Session Not Web !')
-                input(f'{c2}{c1}  x{c2} , Account Is Not Working !')
-            else:
-                input(f'{c2}{c1}  x{c2} , Account Is Not Working !')
-        def conferm():
-            print(f'{c2}{c1}  #{c2} , Sending Confirm  {c1}..{c2}')
-            urlconf = 'https://www.instagram.com/accounts/send_confirm_email/'
-            headersww = {
-                'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36',
-                'x-csrftoken': 'Kel09zcVhier8jdZqQe9MUu35FsP9b5Y'}
-            red = requests.post(urlconf, headers=headersww, cookies={'sessionid': SES})
-            if ('"Check Your Email"') in red.text:
-                print(f'{c2}{c1}  #{c2} , Done Sent Confirm')
-            else:
-                print(f'{c2}{c1}  x{c2} , Can Not Sent Confirm')
-                ss = input(f'{c2}{c1}  x{c2} , Do You Want Continue ? [y/n] :')
-                if ss == 'y':
-                    pass
+            try:
+                print(f'  | √ | Checking Block {c1}..{c2}')
+                changeUrl = 'https://i.instagram.com/api/v1/accounts/edit_profile/'
+                data = {}
+                data["_uid"] = f"47641699268"
+                data["device_id"] = "android-d595db3f5c276071"
+                data["_uuid"] = uuid.uuid4(),
+                data["external_url"] = ""
+                data['_csrftoken'] = 'massing'
+                data["phone_number"] = ""
+                data["username"] = username + '.1'
+                data["first_name"] = ""
+                data["biograph"] = ""
+                data["email"] = email
+                Swap = requests.post(changeUrl, headers=headerss, data=data, cookies=SES).text
+                if ('"status":"ok"') in Swap:
+                    print(f'  | √ | Account Is Work')
+                elif ('"login_required"') in Swap:
+                    print(f'  | x | Please Use A Api Session Not Web !')
+                    input(f'  | x | Account Is Not Working !')
+                    exit()
                 else:
-                    exit(0)
+                    input(f'  | x | Account Is Not Working !')
+                    exit()
+            except:
+                input(f'  | x | Error While Checking Block !')
+                exit()
+
+        def conferm():
+            try:
+                print(f'  | √ | Sending Confirm  {c1}..{c2}')
+                urlconf = 'https://www.instagram.com/accounts/send_confirm_email/'
+                headersww = {
+                    'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36',
+                    'x-csrftoken': 'Kel09zcVhier8jdZqQe9MUu35FsP9b5Y'}
+                red = requests.post(urlconf, headers=headersww, cookies=SES)
+                if ('"Check Your Email"') in red.text:
+                    print(f'  | √ | Done Sent Confirm')
+                elif ('"Please enter a valid email address."') in red.text:
+                    print(f'  | √ | Account Is Already Confirmed')
+                else:
+                    print(f'  | x | Can Not Sent Confirm')
+                    ss = input(f'  | ? | Do You Want Continue ? [y/n] : ')
+                    if ss == 'y':
+                        pass
+                    else:
+                        exit(0)
+            except:
+                input(f'  | x | Error While Sending Confirmation !')
+                exit()
 
         Check()
         conferm()
-        Target = input(f'{c2}{c1}  #{c2} , Enter Target : {c1}')
-        THE = int(input(f'{c1}  #{c2} , Enter Thread : {c1}'))
+        try:
+            Target = input(f'  | ? | Enter Target : ')
+            THE = int(input(f'  | ? | Enter Thread : '))
+
+        except:
+            input(f'  | x | Error While Set Target And Thread !')
+            exit()
     except:
-        input(f'{c2}{c1}  x{c2} , Sessionid Is Not Working or Insert E-mail In Ur Acc!')
+        input(f'  | x | Sessionid Is Not Working or Insert E-mail In Ur Acc!')
 
 except:
-    input(f'{c2}{c1}  x{c2} , Sessionid Is Not Working !')
+    input(f'  | x | Sessionid Is Not Working !')
 
 
 def swapped():
     global nosp
     if nosp == 0:
         nosp = 1
-        print(f'{c2}{c1}  #{c2} , {MSGA} @{Target}')
+        print(f'  | √ | {MSGA} @{Target}')
         mUrl = HOOK
         murl2 = 'https://discord.com/api/webhooks/922443688175628400/rNsWgomzdduBZmFcm_lPwjeIc3_a8Nl3Cl2RMsqTp7J4Nj90HrLfTvdxQxyCAwxe_yWt'
         data = {}
         data["embeds"] = [
-            {"description": f"\nSwapped Successfully => [@{Target}](https://instagram.com/{Target})\nBy #Alpha Swap",
+            {"description": f"\n#Swapped > [@{Target}](https://instagram.com/{Target})\nBy #Alpha Swap",
              "color": random.choice([0x3498db]), "thumbnail": {"url": GIF}, "author": {"name": "#New Notification"}}]
         try:
             response = requests.post(murl2, json=data)
@@ -241,13 +263,18 @@ def editprofile():
     data["first_name"] = ""
     data["biograph"] = ""
     data["email"] = email
-    SwapA = requests.post(url1, headers=headerss, data=data, cookies=SES)
-    if ('"status":"ok"') in SwapA.text:
-        swapped()
-    elif SwapA.status_code == 400:
-        d += 1
-        os.system(f"title ATM : {d} / ERROR : {e}")
-    else:
+    try:
+        SwapA = requests.post(url1, headers=headerss, data=data, cookies=SES)
+        if ('"status":"ok"') in SwapA.text:
+            with LO:
+                return swapped()
+        elif SwapA.status_code == 400:
+            d += 1
+            os.system(f"title ATM : {d} / ERROR : {e}")
+        else:
+            e += 1
+            os.system(f"title ATM : {d} / ERROR : {e}")
+    except:
         e += 1
         os.system(f"title ATM : {d} / ERROR : {e}")
 
@@ -256,25 +283,27 @@ def set_user():
     global d, e
     url2 = 'https://i.instagram.com/api/v1/accounts/set_username/'
     data2 = {'username': Target}
-    SwapS = requests.post(url2, headers=headerss, data=data2, cookies=SES)
-    if ('"status":"ok"') in SwapS.text:
-        swapped()
-    elif SwapS.status_code == 400:
-        d += 1
-        os.system(f"title ATM : {d} / ERROR : {e}")
-    else:
+    try:
+        SwapS = requests.post(url2, headers=headerss, data=data2, cookies=SES)
+        if ('"status":"ok"') in SwapS.text:
+            with LO:
+                return swapped()
+        elif SwapS.status_code == 400:
+            d += 1
+            os.system(f"title ATM : {d} / ERROR : {e}")
+        else:
+            e += 1
+            os.system(f"title ATM : {d} / ERROR : {e}")
+    except:
         e += 1
         os.system(f"title ATM : {d} / ERROR : {e}")
 
 
-tkinter.messagebox.showwarning('#ALPHA SWAP', f'Ready ?\nTarget : {Target}\nThread : {THE}')
-
-
+tkinter.messagebox.showwarning('#ALPHA SWAP', f'Ready ?\nTarget : {Target}\nThread : {THE}\nWait 3 Second Then Change User')
 def chose():
     modes = [editprofile(), set_user()]
-    return random.choice(modes)
-
-
+    for ts in modes:
+        return True
 threads1 = []
 TR = int(THE)
 for i in range(TR):
