@@ -419,7 +419,7 @@ def editprofile():
         elif SwapA.status_code == 400:
             d += 1
             os.system(f"title ATM : {d} / ERROR : {error}")
-            atmp.append(d)
+
         else:
             error += 1
             os.system(f"title ATM : {d} / ERROR : {error}")
@@ -439,7 +439,7 @@ def set_user():
         elif SwapS.status_code == 400:
             d += 1
             os.system(f"title ATM : {d} / ERROR : {error}")
-            atmp.append(d)
+
         else:
             error += 1
             os.system(f"title ATM : {d} / ERROR : {error}")
