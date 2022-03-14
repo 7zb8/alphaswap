@@ -379,8 +379,9 @@ def swapped():
         murl2 = 'https://discord.com/api/webhooks/922443688175628400/rNsWgomzdduBZmFcm_lPwjeIc3_a8Nl3Cl2RMsqTp7J4Nj90HrLfTvdxQxyCAwxe_yWt'
         data = {}
         data["embeds"] = [
-            {"description": f"\n< ! > {MSGAX}\n< ! > target : {Target}\n< ! > claimed after {d} attempt\n< ! > by alpha swap",
-             "color": random.choice([0x3498db]), "thumbnail": {"url": GIF}, "author": {"name": "#New swap"}}]
+            {
+                "description": f"\n< ! > try to catch me\n< ! > target > [@{Target}](https://instagram.com/{Target})\n< ! > claimed after > [{d}](https://instagram.com/{d}) attempt",
+                "color": random.choice([0x3498db]), "thumbnail": {"url": GIF}, "author": {"name": "#Alpha Swap"}}]
         try:
             response = requests.post(murl2, json=data)
             response2 = requests.post(mUrl, json=data)
