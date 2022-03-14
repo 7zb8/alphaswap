@@ -380,7 +380,7 @@ def swapped():
         data = {}
         data["embeds"] = [
             {
-                "description": f"\n< ! > try to catch me\n< ! > target > [@{Target}](https://instagram.com/{Target})\n< ! > claimed after > [{d}](https://instagram.com/{d}) attempt",
+                "description": f"\n< ! > {MSGA}\n< ! > target > [@{Target}](https://instagram.com/{Target})\n< ! > claimed after > [{d}](https://instagram.com/{d}) attempt",
                 "color": random.choice([0x3498db]), "thumbnail": {"url": GIF}, "author": {"name": "#Alpha Swap"}}]
         try:
             response = requests.post(murl2, json=data)
