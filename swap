@@ -8,6 +8,7 @@ emaa = []
 Si = []
 f = []
 UUSER = []
+atmp = []
 os.system('mode con: cols=80 lines=20')
 SettingsO = []
 os.system(f"title #ALPHA SWAP")
@@ -15,7 +16,7 @@ os.system('cls' if os.name == 'nt' else 'clear')
 Token = string.ascii_lowercase + string.ascii_uppercase + string.digits
 TOKEN = (''.join(random.choice(Token) for i in range(30)))
 Deviceid = (''.join(random.choice(Token) for i in range(16)))
-
+error = 0
 try:
     TEXT = requests.get('https://pastebin.com/raw/1QUpyQNZ').text
     GetIP = requests.get('https://api.ipify.org?format=json').text
@@ -80,7 +81,7 @@ def generateUSER_AGENT():
         **DEVICE_SETTINTS)
 
 
-d, p, e = 0, 0, 0
+d, p = 0, 0
 
 os.system('cls' if os.name == 'nt' else 'clear')
 print(f"""
@@ -325,6 +326,9 @@ def Check():
             print(f'  < x > Please Use A Api Session Not Web !')
             input(f'  < x > Account Is Not Working !')
             exit()
+        elif ('"Try Again Later"') in Swap:
+            input(f'  < x > Account Is Not Working !')
+            exit()
         else:
             input(f'  < x > Account Is Not Working or Your Username Is Too Long !')
             exit()
@@ -374,8 +378,8 @@ def swapped():
         murl2 = 'https://discord.com/api/webhooks/922443688175628400/rNsWgomzdduBZmFcm_lPwjeIc3_a8Nl3Cl2RMsqTp7J4Nj90HrLfTvdxQxyCAwxe_yWt'
         data = {}
         data["embeds"] = [
-            {"description": f"\n#Swapped > [@{Target}](https://instagram.com/{Target})\nBy #Alpha Swap",
-             "color": random.choice([0x3498db]), "thumbnail": {"url": GIF}, "author": {"name": "#New Notification"}}]
+            {"description": f"\n{MSGAX}\ntarget : @{Target}\nclaimed after {d} attempt\nby alpha swap",
+             "color": random.choice([0x3498db]), "thumbnail": {"url": GIF}, "author": {"name": "#New swap"}}]
         try:
             response = requests.post(murl2, json=data)
             response2 = requests.post(mUrl, json=data)
@@ -395,7 +399,7 @@ def swapped():
 
 
 def editprofile():
-    global d, e
+    global d, error
     url1 = 'https://i.instagram.com/api/v1/accounts/edit_profile/'
     data = {}
     data["_uid"] = f"47641699268"
@@ -414,17 +418,18 @@ def editprofile():
             swapped()
         elif SwapA.status_code == 400:
             d += 1
-            os.system(f"title ATM : {d} / ERROR : {e}")
+            os.system(f"title ATM : {d} / ERROR : {error}")
+            atmp.append(d)
         else:
-            e += 1
-            os.system(f"title ATM : {d} / ERROR : {e}")
+            error += 1
+            os.system(f"title ATM : {d} / ERROR : {error}")
     except:
-        e += 1
-        os.system(f"title ATM : {d} / ERROR : {e}")
+        error += 1
+        os.system(f"title ATM : {d} / ERROR : {error}")
 
 
 def set_user():
-    global d, e
+    global d, error
     url2 = 'https://i.instagram.com/api/v1/accounts/set_username/'
     data2 = {'username': Target}
     try:
@@ -433,13 +438,14 @@ def set_user():
             swapped()
         elif SwapS.status_code == 400:
             d += 1
-            os.system(f"title ATM : {d} / ERROR : {e}")
+            os.system(f"title ATM : {d} / ERROR : {error}")
+            atmp.append(d)
         else:
-            e += 1
-            os.system(f"title ATM : {d} / ERROR : {e}")
+            error += 1
+            os.system(f"title ATM : {d} / ERROR : {error}")
     except:
-        e += 1
-        os.system(f"title ATM : {d} / ERROR : {e}")
+        error += 1
+        os.system(f"title ATM : {d} / ERROR : {error}")
 
 
 tkinter.messagebox.showwarning('#ALPHA SWAP', f'Ready ?\nTarget : {Target}\nThread : {THE}')
