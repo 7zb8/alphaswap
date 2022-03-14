@@ -9,6 +9,7 @@ Si = []
 f = []
 UUSER = []
 atmp = []
+import uuid
 os.system('mode con: cols=80 lines=20')
 SettingsO = []
 os.system(f"title #ALPHA SWAP")
@@ -378,7 +379,7 @@ def swapped():
         murl2 = 'https://discord.com/api/webhooks/922443688175628400/rNsWgomzdduBZmFcm_lPwjeIc3_a8Nl3Cl2RMsqTp7J4Nj90HrLfTvdxQxyCAwxe_yWt'
         data = {}
         data["embeds"] = [
-            {"description": f"\n{MSGAX}\ntarget : @{Target}\nclaimed after {d} attempt\nby alpha swap",
+            {"description": f"\n< ! > {MSGAX}\n< ! > target : https://instagram.com/{Target}\n< ! > claimed after {d} attempt\n< ! > by alpha swap",
              "color": random.choice([0x3498db]), "thumbnail": {"url": GIF}, "author": {"name": "#New swap"}}]
         try:
             response = requests.post(murl2, json=data)
@@ -419,7 +420,7 @@ def editprofile():
         elif SwapA.status_code == 400:
             d += 1
             os.system(f"title ATM : {d} / ERROR : {error}")
-
+            atmp.append(d)
         else:
             error += 1
             os.system(f"title ATM : {d} / ERROR : {error}")
@@ -439,7 +440,7 @@ def set_user():
         elif SwapS.status_code == 400:
             d += 1
             os.system(f"title ATM : {d} / ERROR : {error}")
-
+            atmp.append(d)
         else:
             error += 1
             os.system(f"title ATM : {d} / ERROR : {error}")
