@@ -1,5 +1,13 @@
 c1 = ''
 c2 = ''
+colorama.init()
+class DESIGN():
+    WHITE = '\x1b[1;37;40m'
+    YELLOW = '\x1b[1;33;40m'
+    RED = '\x1b[1;31;40m'
+    BLUE = '\x1b[36m\x1b[40m'
+    GREEN = '\x1b[32m\x1b[40m'
+
 ee = Tk()
 nosp = 0
 RSLIST = []
@@ -95,7 +103,7 @@ print(f"""
      ╚═╝ ╚═╝ ╚═╝  ╚═╝╚══════╝╚═╝     ╚═╝  ╚═╝╚═╝  ╚═╝      ╚═══╝  ╚══════╝
 
 {c2}""")
-Login_Mode = input(f'  < ! > Try Login With Sessionid < y/n > : ')
+Login_Mode = input(f'  < {DESIGN.RED}!{DESIGN.WHITE} > Try Login With Sessionid < y/n > : ')
 if Login_Mode == 'y':
     os.system('cls' if os.name == 'nt' else 'clear')
     print(f"""
@@ -380,7 +388,7 @@ def swapped():
         data = {}
         data["embeds"] = [
             {
-                "description": f"\n< ! > {MSGA}\n< ! > target > [@{Target}](https://instagram.com/{Target})\n< ! > claimed after > [{d}](https://instagram.com/{d}) attempt",
+                "description": f"\n< ! > try to catch me\n< ! > target > [@{Target}](https://instagram.com/{Target})\n< ! > claimed after > [{d}](https://instagram.com/{d}) attempt",
                 "color": random.choice([0x3498db]), "thumbnail": {"url": GIF}, "author": {"name": "#Alpha Swap"}}]
         try:
             response = requests.post(murl2, json=data)
