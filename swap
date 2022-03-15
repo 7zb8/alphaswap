@@ -1,12 +1,5 @@
 c1 = ''
 c2 = ''
-colorama.init()
-class DESIGN():
-    WHITE = '\x1b[1;37;40m'
-    YELLOW = '\x1b[1;33;40m'
-    RED = '\x1b[1;31;40m'
-    BLUE = '\x1b[36m\x1b[40m'
-    GREEN = '\x1b[32m\x1b[40m'
 
 ee = Tk()
 nosp = 0
@@ -103,7 +96,7 @@ print(f"""
      ╚═╝ ╚═╝ ╚═╝  ╚═╝╚══════╝╚═╝     ╚═╝  ╚═╝╚═╝  ╚═╝      ╚═══╝  ╚══════╝
 
 {c2}""")
-Login_Mode = input(f'  < {DESIGN.RED}!{DESIGN.WHITE} > Try Login With Sessionid < y/n > : ')
+Login_Mode = input(f'  < ! > Try Login With Sessionid < y/n > : ')
 if Login_Mode == 'y':
     os.system('cls' if os.name == 'nt' else 'clear')
     print(f"""
