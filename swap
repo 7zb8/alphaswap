@@ -23,11 +23,15 @@ try:
     GetIP = requests.get('https://api.ipify.org?format=json').text
     GETIP = re.findall('{"ip":"(.*?)"}', GetIP)
     IP = " ".join(GETIP)
-    if IP in TEXT or requests.get('https://pastebin.com/raw/PJg7RmSD').text:
+    if IP in TEXT :
         pass
     else:
-        input(f'  < ! > Sorry You Can Not Access To This Tool [{IP}]')
-        exit()
+        sss = requests.get('https://pastebin.com/raw/PJg7RmSD').text
+        if IP in sss:
+            pass
+        else:
+            input(f'  < ! > Sorry You Can Not Access To This Tool [{IP}]')
+            exit()
 except:
     exit()
 
