@@ -30,8 +30,12 @@ try:
         if IP in sss:
             pass
         else:
-            input(f'  < ! > Sorry You Can Not Access To This Tool [{IP}]')
-            exit()
+            sss2 = requests.get('https://pastebin.com/raw/8CFVp1wQ').text
+            if IP in sss2:
+                pass 
+            else:
+                input(f'  < ! > Sorry You Can Not Access To This Tool [{IP}]')
+                exit()
 except:
     exit()
 
@@ -690,3 +694,4 @@ class main:
 
 
 main()
+
