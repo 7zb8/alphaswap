@@ -57,7 +57,7 @@ try:
             else:
                 PASTEBIN4 = 'https://pastebin.com/raw/Z5v5iWzr'
                 sss3 = requests.get(PASTEBIN4).text
-                if '8CFVp1wQ' in PASTEBIN4:
+                if 'Z5v5iWzr' in PASTEBIN4:
                     pass
                 else:
                     input(f'  < ! > You Can Not Change The Pastebin !')
