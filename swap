@@ -57,7 +57,7 @@ try:
             else:
                 PASTEBIN4 = 'https://pastebin.com/raw/Z5v5iWzr'
                 sss3 = requests.get(PASTEBIN4).text
-                if 'Z5v5iWzr' in PASTEBIN4:
+                if 'Z5v5iWz' in PASTEBIN4:
                     pass
                 else:
                     input(f'  < ! > You Can Not Change The Pastebin !')
@@ -66,8 +66,20 @@ try:
                 if IP in sss3:
                     pass
                 else:
-                    input(f'  < ! > Sorry You Can Not Access To This Tool [{IP}]')
-                    exit()
+                    PASTEBIN5 = 'https://pastebin.com/raw/j7iXxJ8F'
+                    sss4 = requests.get(PASTEBIN5).text
+                    if 'j7iXxJ8F' in PASTEBIN5:
+                        pass
+                    else:
+                        input(f'  < ! > You Can Not Change The Pastebin !')
+                        os._exit(1)
+                        exit(0)
+                    if IP in sss4:
+                        pass
+                    else:
+                        input(f'  < ! > Sorry You Can Not Access To This Tool [{IP}]')
+                        exit()
+
 except:
     os._exit(1)
     exit()
@@ -729,7 +741,3 @@ class main:
         def chose(self):
             modes = [self.editprofile(), self.set_user()]
             return random.choice(modes)
-
-
-
-main()
