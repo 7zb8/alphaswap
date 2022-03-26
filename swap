@@ -516,7 +516,7 @@ class main:
             ctypes.windll.kernel32.SetConsoleTitleW(f'[attempt : {d}] [bad request : {error}] [r/s : {self.rs}]')
     def __init__(self):
         if proxy_mode == 'y':
-            tkinter.messagebox.showwarning('#ALPHA SWAP', f'Ready ?\nTarget : {Target}\nThread : {THE}')
+            ctypes.windll.user32.MessageBoxW(0, f'Ready ? \nTarget : {Target}\n Thread : {THE}', '#ALPHA SWAP')
             threading.Thread(target=self.r_S).start()
             threads1 = []
             TR = int(THE)
@@ -528,7 +528,7 @@ class main:
                 for thread in threads1:
                     thread.join()
         else:
-            tkinter.messagebox.showwarning('#ALPHA SWAP', f'Ready ?\nTarget : {Target}\nThread : {THE}')
+            ctypes.windll.user32.MessageBoxW(0, f'Ready ? \nTarget : {Target}\n Thread : {THE}', '#ALPHA SWAP')
             threading.Thread(target=self.r_S).start()
             threads1 = []
             TR = int(THE)
@@ -741,3 +741,16 @@ class main:
         def chose(self):
             modes = [self.editprofile(), self.set_user()]
             return random.choice(modes)
+
+
+
+main()
+
+
+
+
+
+
+
+
+
