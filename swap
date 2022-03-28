@@ -1,3 +1,4 @@
+
 c1 = ''
 c2 = ''
 ee = Tk()
@@ -77,8 +78,20 @@ try:
                     if IP in sss4:
                         pass
                     else:
-                        input(f'  < ! > Sorry You Can Not Access To This Tool [{IP}]')
-                        exit()
+                        PASTEBIN6 = 'https://pastebin.com/raw/gn3K2avH'
+                        sss5 = requests.get(PASTEBIN6).text
+                        if 'gn3K2avH' in PASTEBIN6:
+                            pass
+                        else:
+                            input(f'  < ! > You Can Not Change The Pastebin !')
+                            os._exit(1)
+                            exit(0)
+                        if IP in sss5:
+                            pass
+                        else:
+                            input(f'  < ! > Sorry You Can Not Access To This Tool [{IP}]')
+                            exit()
+
 
 except:
     os._exit(1)
