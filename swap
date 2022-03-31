@@ -1,3 +1,4 @@
+
 c1 = ''
 c2 = ''
 ee = Tk()
@@ -387,11 +388,13 @@ else:
         'Connection': 'keep-alive'}
     GetUrl = 'https://i.instagram.com/api/v1/accounts/current_user/?edit=true'
     try:
-        gett = requests.get(GetUrl, headers=headerss, cookies=SES).json()
-        if ('"login_required"') in gett:
-            input(f'  < x > Sessionid Is Not Working !')
+        gett = requests.get(GetUrl, headers=headerss, cookies=SES)
+        if ('"login_required"') in gett.text:
+            input(f'  < x > Sessionid Is Not Working ! {gett.text}')
             exit()
-        username = gett['user']['username']
+        elif ("user") in gett.text:
+            pass
+            username = gett.json()['user']['username']
     except:
         input(f'  < x > Sessionid Is Not Working !')
         exit()
@@ -409,7 +412,7 @@ else:
     print(f'  < √ > Login Successfully @{c2}{username}')
     time.sleep(0.2)
     try:
-        email = gett['user']['email']
+        email = gett.json()['user']['email']
         print(f'  < √ > Done Grab E-mail')
         time.sleep(0.2)
     except:
@@ -760,3 +763,12 @@ class main:
 
 
 main()
+
+
+
+
+
+
+
+
+
