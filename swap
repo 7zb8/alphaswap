@@ -1,4 +1,3 @@
-
 c1 = ''
 c2 = ''
 ee = Tk()
@@ -529,10 +528,16 @@ class main:
             time.sleep(1)
             self.rs = d - sec_befor
             ctypes.windll.kernel32.SetConsoleTitleW(f'[attempt : {d}] [bad request : {error}] [r/s : {self.rs}]')
+    def Count(self):
+        try:
+            while True:
+                ctypes.windll.kernel32.SetConsoleTitleW(f'[attempt : {d}] [bad request : {error}] [r/s : {self.rs}]')
+        except:""
     def __init__(self):
         if proxy_mode == 'y':
             ctypes.windll.user32.MessageBoxW(0, f'Ready ? \nTarget : {Target}\n Thread : {THE}', '#ALPHA SWAP')
             threading.Thread(target=self.r_S).start()
+            threading.Thread(target=self.Count).start()
             threads1 = []
             TR = int(THE)
             while True:
@@ -545,6 +550,7 @@ class main:
         else:
             ctypes.windll.user32.MessageBoxW(0, f'Ready ? \nTarget : {Target}\n Thread : {THE}', '#ALPHA SWAP')
             threading.Thread(target=self.r_S).start()
+            threading.Thread(target=self.Count).start()
             threads1 = []
             TR = int(THE)
             for i in range(TR):
