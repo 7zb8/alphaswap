@@ -510,9 +510,7 @@ else:
             exit()
 
 
-    CHECKBLOCK = input(f'  < ! > Check Block [y/n] : ')
-    if CHECKBLOCK == 'y':
-        Check()
+    Check()
     conferm()
     try:
         Target = input(f'  < ! > Enter Target : ')
