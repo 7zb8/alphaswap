@@ -528,6 +528,7 @@ class main:
             sec_befor = d
             time.sleep(1)
             self.rs = d - sec_befor
+            ctypes.windll.kernel32.SetConsoleTitleW(f'[attempt : {d}] [bad request : {error}] [r/s : {self.rs}]')
     def Count(self):
         try:
             while True:
@@ -769,3 +770,12 @@ class main:
 
 
 main()
+
+
+
+
+
+
+
+
+
