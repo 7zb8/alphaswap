@@ -508,7 +508,11 @@ else:
         except:
             input(f'  < x > Error While Sending Confirmation !')
             exit()
-    Check()
+
+
+    CHECKBLOCK = input(f'  < ! > Check Block [y/n] : ')
+    if CHECKBLOCK == 'y':
+        Check()
     conferm()
     try:
         Target = input(f'  < ! > Enter Target : ')
@@ -768,3 +772,12 @@ class main:
 
 
 main()
+
+
+
+
+
+
+
+
+
