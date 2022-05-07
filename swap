@@ -420,7 +420,16 @@ else:
         input(f'  [ - ] Sessionid Is Not Working !')
         exit()
     os.system('cls' if os.name == 'nt' else 'clear')
-    print(banner)
+    print(f"""
+
+     ██╗ ██╗  █████╗ ██╗     ██████╗ ██╗  ██╗ █████╗     ██╗   ██╗██████╗ 
+    ████████╗██╔══██╗██║     ██╔══██╗██║  ██║██╔══██╗    ██║   ██║╚════██╗
+    ╚██╔═██╔╝███████║██║     ██████╔╝███████║███████║    ██║   ██║ █████╔╝
+    ████████╗██╔══██║██║     ██╔═══╝ ██╔══██║██╔══██║    ╚██╗ ██╔╝ ╚═══██╗
+    ╚██╔═██╔╝██║  ██║███████╗██║     ██║  ██║██║  ██║     ╚████╔╝ ██████╔╝
+     ╚═╝ ╚═╝ ╚═╝  ╚═╝╚══════╝╚═╝     ╚═╝  ╚═╝╚═╝  ╚═╝      ╚═══╝  ╚═════╝ 
+
+    {c2}""")
     print(f'  [ + ] Login Successfully @{c2}{username}')
     time.sleep(0.2)
     try:
@@ -542,11 +551,12 @@ else:
 
 class main:
     def r_S(self):
-        while True:
-            sec_befor = d
-            time.sleep(1)
-            self.rs = d - sec_befor
-            ctypes.windll.kernel32.SetConsoleTitleW(f'[attempt : {d}] [bad request : {error}] [r/s : {self.rs}]')
+        if self.run:
+            while self.run:
+                sec_befor = d
+                time.sleep(1)
+                self.rs = d - sec_befor
+                ctypes.windll.kernel32.SetConsoleTitleW(f'[attempt : {d}] [bad request : {error}] [r/s : {self.rs}]')
 
     def Count(self):
         try:
@@ -560,7 +570,6 @@ class main:
         if proxy_mode == 'y':
             ctypes.windll.user32.MessageBoxW(0, f'Ready ? \nTarget : {Target}\n Thread : {THE}', '#ALPHA SWAP')
             threading.Thread(target=self.r_S).start()
-            threading.Thread(target=self.Count).start()
             threads1 = []
             TR = int(THE)
             for i in range(TR):
@@ -725,7 +734,7 @@ class main:
                                         embed = DiscordEmbed(title=f'💀, alpha catch it @{Target}', color=654424)
                                         embed.set_author(name="Alpha v3.1")
                                         embed.set_thumbnail(url='')
-                                        embed.set_footer(text=f'Attempts : {d} | R/s : known',
+                                        embed.set_footer(text=f'Attempts : {d} | R/s : {self.rs}',
                                                          icon_url=f"https://media4.giphy.com/media/4ilFRqgbzbx4c/200.gif")
                                         webhook.add_embed(embed)
                                         webhook.execute()
@@ -736,7 +745,7 @@ class main:
                                         embed = DiscordEmbed(title=f'💀, alpha catch it @{Target}', color=654424)
                                         embed.set_author(name="Alpha v3.1")
                                         embed.set_thumbnail(url='')
-                                        embed.set_footer(text=f'Attempts : {d} | R/s : known',
+                                        embed.set_footer(text=f'Attempts : {d} | R/s : {self.rs}',
                                                          icon_url=f"https://media4.giphy.com/media/4ilFRqgbzbx4c/200.gif")
                                         webhook.add_embed(embed)
                                         webhook.execute()
@@ -802,7 +811,7 @@ class main:
                                         embed = DiscordEmbed(title=f'💀, alpha catch it @{Target}', color=654424)
                                         embed.set_author(name="Alpha v3.1")
                                         embed.set_thumbnail(url='')
-                                        embed.set_footer(text=f'Attempts : {d} | R/s : known',
+                                        embed.set_footer(text=f'Attempts : {d} | R/s : {self.rs}',
                                                          icon_url=f"https://media4.giphy.com/media/4ilFRqgbzbx4c/200.gif")
                                         webhook.add_embed(embed)
                                         webhook.execute()
@@ -813,7 +822,7 @@ class main:
                                         embed = DiscordEmbed(title=f'💀, alpha catch it @{Target}', color=654424)
                                         embed.set_author(name="Alpha v3.1")
                                         embed.set_thumbnail(url='')
-                                        embed.set_footer(text=f'Attempts : {d} | R/s : known',
+                                        embed.set_footer(text=f'Attempts : {d} | R/s : {self.rs}',
                                                          icon_url=f"https://media4.giphy.com/media/4ilFRqgbzbx4c/200.gif")
                                         webhook.add_embed(embed)
                                         webhook.execute()
@@ -858,12 +867,3 @@ class main:
 
 
 main()
-
-
-
-
-
-
-
-
-
