@@ -734,7 +734,7 @@ class main:
                                         embed = DiscordEmbed(title=f'💀, alpha catch it @{Target}', color=654424)
                                         embed.set_author(name="Alpha v3.1")
                                         embed.set_thumbnail(url='')
-                                        embed.set_footer(text=f'Attempts : {d} | R/s : {self.rs}',
+                                        embed.set_footer(text=f'Attempts : {d} | R/s : known',
                                                          icon_url=f"https://media4.giphy.com/media/4ilFRqgbzbx4c/200.gif")
                                         webhook.add_embed(embed)
                                         webhook.execute()
@@ -745,7 +745,7 @@ class main:
                                         embed = DiscordEmbed(title=f'💀, alpha catch it @{Target}', color=654424)
                                         embed.set_author(name="Alpha v3.1")
                                         embed.set_thumbnail(url='')
-                                        embed.set_footer(text=f'Attempts : {d} | R/s : {self.rs}',
+                                        embed.set_footer(text=f'Attempts : {d} | R/s : known',
                                                          icon_url=f"https://media4.giphy.com/media/4ilFRqgbzbx4c/200.gif")
                                         webhook.add_embed(embed)
                                         webhook.execute()
@@ -811,7 +811,7 @@ class main:
                                         embed = DiscordEmbed(title=f'💀, alpha catch it @{Target}', color=654424)
                                         embed.set_author(name="Alpha v3.1")
                                         embed.set_thumbnail(url='')
-                                        embed.set_footer(text=f'Attempts : {d} | R/s : {self.rs}',
+                                        embed.set_footer(text=f'Attempts : {d} | R/s : known',
                                                          icon_url=f"https://media4.giphy.com/media/4ilFRqgbzbx4c/200.gif")
                                         webhook.add_embed(embed)
                                         webhook.execute()
@@ -822,7 +822,7 @@ class main:
                                         embed = DiscordEmbed(title=f'💀, alpha catch it @{Target}', color=654424)
                                         embed.set_author(name="Alpha v3.1")
                                         embed.set_thumbnail(url='')
-                                        embed.set_footer(text=f'Attempts : {d} | R/s : {self.rs}',
+                                        embed.set_footer(text=f'Attempts : {d} | R/s : known',
                                                          icon_url=f"https://media4.giphy.com/media/4ilFRqgbzbx4c/200.gif")
                                         webhook.add_embed(embed)
                                         webhook.execute()
