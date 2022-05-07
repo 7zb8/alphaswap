@@ -1,4 +1,5 @@
 
+
 c1 = ''
 c2 = ''
 ee = Tk()
@@ -566,7 +567,6 @@ class main:
             ""
 
     def __init__(self):
-        self.lOOCK = Lock()
         self.run = True
         if proxy_mode == 'y':
             ctypes.windll.user32.MessageBoxW(0, f'Ready ? \nTarget : {Target}\n Thread : {THE}', '#ALPHA SWAP')
@@ -690,7 +690,6 @@ class main:
                                             except:
                                                 exit(1)
                                 elif SwapS.status_code == 400:
-                                    with self.lOOCK:
                                         d += 1
                                 else:
                                     error += 1
@@ -781,7 +780,6 @@ class main:
                                     except:
                                         exit(1)
                         elif SwapA.status_code == 400:
-                            with self.lOOCK:
                                 d += 1
                         else:
                             error += 1
@@ -859,7 +857,6 @@ class main:
                                     except:
                                         exit(1)
                             elif SwapS.status_code == 400:
-                                with self.lOOCK:
                                     d += 1
                             else:
                                 error += 1
