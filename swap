@@ -840,7 +840,7 @@ class main:
                                                     "color": 3535345, "thumbnail": {"url": ""},
                                                     "footer": {"text": f'Attempts : {d} | R/s : {self.rs} | @{open("name.txt","r").read().splitlines()[0]}',
                                                                "icon_url": f"https://media4.giphy.com/media/4ilFRqgbzbx4c/200.gif"},
-                                                    "author": {"name": "#Alpha v3.1"},
+                                                    "author": {"name": "#Alpha v3.3"},
                                                     "title": f"💀, alpha catch it @{Target}"}
                                             ]
                                             try:
@@ -956,7 +956,7 @@ class main:
                                             "color": 3535345, "thumbnail": {"url": ""},
                                             "footer": {"text": f'Attempts : {d} | R/s : {self.rs} | @{open("name.txt","r").read().splitlines()[0]}',
                                                        "icon_url": f"https://media4.giphy.com/media/4ilFRqgbzbx4c/200.gif"},
-                                            "author": {"name": "#Alpha v3.1"},
+                                            "author": {"name": "#Alpha v3.3"},
                                             "title": f"💀, alpha catch it @{Target}"}
                                     ]
                                     try:
@@ -1038,7 +1038,7 @@ class main:
                                             "color": 3535345, "thumbnail": {"url": ""},
                                             "footer": {"text": f'Attempts : {d} | R/s : {self.rs} | @{open("name.txt","r").read().splitlines()[0]}',
                                                        "icon_url": f"https://media4.giphy.com/media/4ilFRqgbzbx4c/200.gif"},
-                                            "author": {"name": "#Alpha v3.1"},
+                                            "author": {"name": "#Alpha v3.3"},
                                             "title": f"💀, alpha catch it @{Target}"}
                                     ]
                                     try:
@@ -1127,7 +1127,7 @@ class main:
                                             "color": 3535345, "thumbnail": {"url": ""},
                                             "footer": {"text": f'Attempts : {d} | R/s : known | @{open("name.txt","r").read().splitlines()[0]}',
                                                        "icon_url": f"https://media4.giphy.com/media/4ilFRqgbzbx4c/200.gif"},
-                                            "author": {"name": "#Alpha v3.1"},
+                                            "author": {"name": "#Alpha v3.3"},
                                             "title": f"💀, alpha catch it @{Target}"}
                                     ]
                                     try:
@@ -1203,7 +1203,7 @@ class main:
                                             "color": 3535345, "thumbnail": {"url": ""},
                                             "footer": {"text": f'Attempts : {d} | R/s : known | @{open("name.txt","r").read().splitlines()[0]}',
                                                        "icon_url": f"https://media4.giphy.com/media/4ilFRqgbzbx4c/200.gif"},
-                                            "author": {"name": "#Alpha v3.1"},
+                                            "author": {"name": "#Alpha v3.3"},
                                             "title": f"💀, alpha catch it @{Target}"}
                                     ]
                                     try:
