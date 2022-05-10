@@ -14,7 +14,7 @@ import uuid
 
 os.system('mode con: cols=95 lines=20')
 SettingsO = []
-ctypes.windll.kernel32.SetConsoleTitleW(f'Alpha Swapper | v3.1 | @sxne - @7zb8')
+ctypes.windll.kernel32.SetConsoleTitleW(f'Alpha Swapper | v3.3 | @sxne - @7zb8')
 os.system('cls' if os.name == 'nt' else 'clear')
 Token = string.ascii_lowercase + string.ascii_uppercase + string.digits
 TOKEN = (''.join(random.choice(Token) for i in range(30)))
@@ -141,7 +141,7 @@ banner = """
       ░   ▒     ░ ░   ░░        ░  ░░ ░  ░   ▒      ░  ░  ░    ░   ░    ░   ▒   ░░       
           ░  ░    ░  ░          ░  ░  ░      ░  ░         ░      ░          ░  ░         
 
-                         Alpha Swapper V3.1 | By @7zb8 - @sxne
+                         Alpha Swapper V3.3 | By @7zb8 - @sxne
 """
 os.system('cls' if os.name == 'nt' else 'clear')
 print(f"""
@@ -157,7 +157,7 @@ print(f"""
       ░   ▒     ░ ░   ░░        ░  ░░ ░  ░   ▒      ░  ░  ░    ░   ░    ░   ▒   ░░       
           ░  ░    ░  ░          ░  ░  ░      ░  ░         ░      ░          ░  ░         
 
-                         Alpha Swapper V3.1 | By @7zb8 - @sxne
+                         Alpha Swapper V3.3 | By @7zb8 - @sxne
 """)
 try :
     name = open('name.txt','r').read().splitlines()[0]
@@ -168,7 +168,7 @@ except:
         WQ.close()
 os.system('cls' if os.name == 'nt' else 'clear')
 print(banner)
-proxy_mode = input(f'  [ Y ] Swap With Proxies | [ N ] Swap Without Proxies\n  [ + ] Enter Mode : ')
+proxy_mode = input(f'  [ Y ] Swap With Proxies | [ N ] Swap Without Proxies | [ C ] Swap With Proxies v2\n  [ + ] Enter Mode : ')
 if proxy_mode == 'y':
     os.system('cls' if os.name == 'nt' else 'clear')
     print(banner)
@@ -241,8 +241,192 @@ bio : {alpha}\nfirstname : {alpha}\nwebhook : {alpha}\nmsg : {alpha}\nmsgbox : {
     except:
         input(f'  [ - ] Error While Set Target And Thread !')
         os._exit(1)
+elif proxy_mode == 'c':
+    os.system('cls' if os.name == 'nt' else 'clear')
+    print(banner)
+    proxy_type = input(f'  [ 1 ] Http/s Proxies | [ 2 ] Socks4 Proxies\n  [ + ] Enter Mode : ')
+    try:
+        PROXY = open('proxy.txt', 'r').read().splitlines()
+    except:
+        print(f'  [ - ] Proxy File Not Found !')
+        with open('proxy.txt', 'a') as ddr:
+            ddr.write('1')
+        input("")
+        os._exit(1)
+    try:
+        see = open('settings.txt', 'r').read().splitlines()
+        for i in see:
+            SettingsO.append(i)
+        bio = SettingsO[0]
+        firstname = SettingsO[1]
+        webhook = SettingsO[2]
+        MMSGP = SettingsO[3]
+        MSGB = SettingsO[4]
+        FGIF = SettingsO[5]
+        B = re.findall('bio : {(.*?)}', bio)
+        BIO = " ".join(B)
+        ###
+        NA = re.findall('firstname : {(.*?)}', firstname)
+        NAME = " ".join(NA)
+        ###
+        ###
+        WEB = re.findall('webhook : {(.*?)}', webhook)
+        HOOK = " ".join(WEB)
+        ###
+        MSG = re.findall('msg : {(.*?)}', MMSGP)
+        MSGA = " ".join(MSG)
+        ##
+        MSGBOX = re.findall('msgbox : {(.*?)}', MSGB)
+        MSGAX = " ".join(MSGBOX)
+        ##
+        GIDD = re.findall('gif : {(.*?)}', FGIF)
+        GIF = " ".join(GIDD)
+        print(f"  [ + ] 'settings.txt' Loaded Successfully")
+        time.sleep(0.2)
+    except:
+        print(f"  [ - ] Error While Load 'settings.txt'")
+        with open('settings.txt', 'a') as ddr:
+            ddr.write("""
+    bio : {alpha}\nfirstname : {alpha}\nwebhook : {alpha}\nmsg : {alpha}\nmsgbox : {alpha}\ngif : {https://c.tenor.com/v38vs0YnPiIAAAAC/red-anime.gif}
+                """)
+        os._exit(1)
+    headerss = {
+        'User-Agent': generateUSER_AGENT(),
+        "Accept": "*/*",
+        "Accept-Encoding": "gzip, deflate",
+        "Accept-Language": "en-US",
+        "X-IG-Capabilities": "3brTvw==",
+        "X-IG-Connection-Type": "WIFI",
+        "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+        'Host': 'i.instagram.com',
+        'Connection': 'keep-alive'}
+    try:
+        print('  [ + ] Enter Tow Different Sessions For 1 Account !')
+        session1=input(f'  [ + ] Enter 1,Sessionid : ')
+        session2=input(f'  [ + ] Enter 2,Sessionid : ')
+        if session2 == session1:input('  [ - ] Enter Different Sessions !');os._exit(1)
+        headerss = {
+            'User-Agent': generateUSER_AGENT(),
+            "Accept": "*/*",
+            "Accept-Encoding": "gzip, deflate",
+            "Accept-Language": "en-US",
+            "X-IG-Capabilities": "3brTvw==",
+            "X-IG-Connection-Type": "WIFI",
+            "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+            'Host': 'i.instagram.com',
+            'Connection': 'keep-alive'}
+        GetUrl = 'https://i.instagram.com/api/v1/accounts/current_user/?edit=true'
+        try:
+            gett = requests.get(GetUrl, headers=headerss, cookies={'sessionid':session1})
+            if ('"login_required"') in gett.text:
+                input(f'  [ - ] Sessionid Is Not Working ! {gett.text}')
+                exit()
+            elif ("user") in gett.text:
+                pass
+                username = gett.json()['user']['username']
+                try:
+                    gett1 = requests.get(GetUrl, headers=headerss, cookies={'sessionid': session2})
+                    if ('"login_required"') in gett1.text:
+                        input(f'  [ - ] Sessionid Is Not Working ! {gett.text}')
+                        exit()
+                    elif ("user") in gett1.text:
+                        pass
+                        username2 = gett1.json()['user']['username']
+                        if username2 == username:pass
+                        else:input('  [ - ] Enter Tow Sessions For One Account !');os._exit(1)
+
+                except:
+                    input(f'  [ - ] Sessionid Is Not Working !')
+                    exit()
+
+        except:
+            input(f'  [ - ] Sessionid Is Not Working !')
+            exit()
+        os.system('cls' if os.name == 'nt' else 'clear')
+        print(banner)
+        print(f'  [ + ] Login Successfully @{c2}{username}')
+        time.sleep(0.2)
+        try:
+            email = gett.json()['user']['email']
+        except:
+            input(f'  [ - ] Sessionid Is Not Working or Insert E-mail In Ur Acc!')
+            exit()
 
 
+        def Check():
+            try:
+                print(f"  [ + ] Checking Block On '@{username}'")
+                changeUrl = 'https://i.instagram.com/api/v1/accounts/edit_profile/'
+                data = {}
+                data["_uid"] = f"47641699268"
+                data["device_id"] = "android-d595db3f5c276071"
+                data["_uuid"] = uuid.uuid4(),
+                data["external_url"] = ""
+                data['_csrftoken'] = 'massing'
+                data["phone_number"] = ""
+                data["username"] = 'raven' + (''.join(random.choice(Token) for i in range(10)))
+                data["first_name"] = ""
+                data["biograph"] = ""
+                data["email"] = email
+                Swap = requests.post(changeUrl, headers=headerss, data=data, cookies={'sessionid':session1}).text
+                if ('"status":"ok"') in Swap:
+                    print(f'  [ + ] Account Is Work')
+                elif ('"login_required"') in Swap:
+                    print(f'  [ + ] Please Use A Api Session Not Web !')
+                    input(f'  [ + ] Account Is Not Working !')
+                    exit()
+                elif ('"Try Again Later"') in Swap:
+                    input(f'  [ - ] Account Is Not Working !')
+                    __ = input(f'  [ Y ] Pass | [ N ] Exit\n  [ + ] Enter Mode : ')
+                    if __ == 'y':
+                        pass
+                    else:
+                        os._exit(1)
+                else:
+                    input(f'  [ - ] Account Is Not Working !')
+                    __ = input(f'  [ Y ] Pass | [ N ] Exit\n  [ + ] Enter Mode : ')
+                    if __ == 'y':
+                        pass
+                    else:
+                        os._exit(1)
+
+            except:
+                input(f'  [ - ] Error While Checking Block !')
+                exit()
+
+
+        def conferm():
+            try:
+                print(f"  [ + ] Sending Confirm On '@{username}'")
+                urlconf = 'https://www.instagram.com/accounts/send_confirm_email/'
+                headersww = {
+                    'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36',
+                    'x-csrftoken': 'Kel09zcVhier8jdZqQe9MUu35FsP9b5Y'}
+                red = requests.post(urlconf, headers=headersww, cookies={'sessionid':session1})
+                if ('"Check Your Email"') in red.text:
+                    print(f'  [ + ] Confirm E-mail Sent Successfully')
+                elif ('"Please enter a valid email address."') in red.text:
+                    print(f'  [ + ] Account Is Already Confirmed')
+                else:
+                    print(f'  [ - ] Can Not Sent Confirm')
+                    ss = input(f'  [ Y ] Pass | [ N ] Exit\n  [ + ] Enter Mode : ')
+                    if ss == 'y':
+                        pass
+                    else:
+                        exit()
+            except:
+                input(f'  [ - ] Error While Sending Confirmation !')
+                exit()
+
+
+        Check()
+        conferm()
+        Target = input(f'  [ + ] Enter Target : ')
+        THE = int(input(f'  [ + ] Enter Thread : '))
+
+    except:
+        input(f'  [ - ] Error While Set Target And Thread !')
+        os._exit(1)
 else:
     os.system('cls' if os.name == 'nt' else 'clear')
     print(f"""
@@ -258,7 +442,7 @@ else:
       ░   ▒     ░ ░   ░░        ░  ░░ ░  ░   ▒      ░  ░  ░    ░   ░    ░   ▒   ░░       
           ░  ░    ░  ░          ░  ░  ░      ░  ░         ░      ░          ░  ░         
 
-                         Alpha Swapper V3.1 | By @7zb8 - @sxne
+                         Alpha Swapper V3.3 | By @7zb8 - @sxne
     """)
     Login_Mode = input(f'  [ Y ] Login With Sessionid | [ N ] Login With username,password\n  [ + ] Enter Mode : ')
     if Login_Mode == 'y':
@@ -276,7 +460,7 @@ else:
       ░   ▒     ░ ░   ░░        ░  ░░ ░  ░   ▒      ░  ░  ░    ░   ░    ░   ▒   ░░       
           ░  ░    ░  ░          ░  ░  ░      ░  ░         ░      ░          ░  ░         
 
-                         Alpha Swapper V3.1 | By @7zb8 - @sxne
+                         Alpha Swapper V3.3 | By @7zb8 - @sxne
         """)
         SIS = input(f'  [ + ] Enter Sessionid : {c1}')
         SES = {'sessionid': SIS}
@@ -295,7 +479,7 @@ else:
       ░   ▒     ░ ░   ░░        ░  ░░ ░  ░   ▒      ░  ░  ░    ░   ░    ░   ▒   ░░       
           ░  ░    ░  ░          ░  ░  ░      ░  ░         ░      ░          ░  ░         
 
-                         Alpha Swapper V3.1 | By @7zb8 - @sxne
+                         Alpha Swapper V3.3 | By @7zb8 - @sxne
         """)
         username = input(f'  [ + ] Enter Username : ')
         password = input(f'  [ + ] Enter Password : ')
@@ -555,6 +739,7 @@ else:
 
 class main:
     def r_S(self):
+        self.rs = 0
         if self.run:
             while self.run:
                 sec_befor = d
@@ -565,7 +750,7 @@ class main:
     def Count(self):
         try:
             while True:
-                ctypes.windll.kernel32.SetConsoleTitleW(f'[attempt : {d}] [bad request : {error}]')
+                ctypes.windll.kernel32.SetConsoleTitleW(f'[attempt : {d}] [bad request : {error}] [r/s : {self.rs}]')
         except:
             ""
 
@@ -576,6 +761,7 @@ class main:
         if proxy_mode == 'y':
             ctypes.windll.user32.MessageBoxW(0, f'Ready ? \nTarget : {Target}\n Thread : {THE}', '#ALPHA SWAP')
             threading.Thread(target=self.r_S).start()
+            threading.Thread(target=self.Count).start()
             threads1 = []
             TR = int(THE)
             for i in range(TR):
@@ -584,8 +770,21 @@ class main:
                 threads1.append(thread1)
             for thread in threads1:
                 thread.join()
+        elif proxy_mode == 'c':
+            ctypes.windll.user32.MessageBoxW(0, f'Ready ? \nTarget : {Target}\n Thread : {THE}', '#ALPHA SWAP')
+            threading.Thread(target=self.r_S).start()
+            threading.Thread(target=self.Count).start()
+            threads1 = []
+            TR = int(THE)
+            for i in range(TR):
+                thread1 = threading.Thread(target=self.func)
+                thread1.start()
+                threads1.append(thread1)
+            for thread in threads1:
+                thread.join()
         else:
             ctypes.windll.user32.MessageBoxW(0, f'Ready ? \nTarget : {Target}\n Thread : {THE}', '#ALPHA SWAP')
+            threading.Thread(target=self.r_S).start()
             threading.Thread(target=self.Count).start()
             threads1 = []
             TR = int(THE)
@@ -710,7 +909,183 @@ class main:
             except:
                 error += 1
 
+    elif proxy_mode == 'c':
+        def editprofile(self):
+            global d, error
+            url1 = 'https://i.instagram.com/api/v1/accounts/edit_profile/'
+            data = {}
+            data["_uid"] = f"47641699268"
+            data["device_id"] = "android-d595db3f5c276071"
+            data["_uuid"] = uuid.uuid4(),
+            data["external_url"] = ""
+            data['_csrftoken'] = 'massing'
+            data["phone_number"] = ""
+            data["username"] = Target
+            data["first_name"] = ""
+            data["biograph"] = ""
+            data["email"] = email
+            try:
+                if self.run:
+                    while self.run:
+                        if proxy_type == '1':
+                            proxq = random.choice(PROXY)
+                            proxy = {'http': f"http://{proxq}", 'https': f"http://{proxq}"}
+                        elif proxy_type == '2':
+                            proxq = random.choice(PROXY)
+                            proxy = {'http': f"socks4://{proxq}", 'https': f"socks4://{proxq}"}
+                        SwapA = requests.post(url1, headers={'User-Agent': generateUSER_AGENT(), "Accept": "*/*",
+                                                             "Accept-Encoding": "gzip, deflate",
+                                                             "Accept-Language": "en-US",
+                                                             "X-IG-Capabilities": "3brTvw==",
+                                                             "X-IG-Connection-Type": "WIFI",
+                                                             "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+                                                             'Host': 'i.instagram.com', 'Connection': 'keep-alive'},
+                                              data=data, cookies={'sessionid':session1},proxies=proxy)
+                        if ('"status":"ok"') in SwapA.text:
+                            if self.run:
+                                self.run = False
+                                global nosp
+                                if nosp == 0:
+                                    nosp = 1
+                                    print(f'  [ + ] {MSGA} @{Target}')
+                                    mUrl = HOOK
+                                    murl2 = 'https://discord.com/api/webhooks/972603252006858832/IL6czFE7a14SXQS7ciscT5mT4HTQSqfbBpOmBJboM8oveftrqMgirhTqI5Pn3zTGPKwf'
+                                    data = {}
+                                    data["embeds"] = [
+                                        {
+                                            "color": 3535345, "thumbnail": {"url": ""},
+                                            "footer": {"text": f'Attempts : {d} | R/s : {self.rs} | @{open("name.txt","r").read().splitlines()[0]}',
+                                                       "icon_url": f"https://media4.giphy.com/media/4ilFRqgbzbx4c/200.gif"},
+                                            "author": {"name": "#Alpha v3.1"},
+                                            "title": f"💀, alpha catch it @{Target}"}
+                                    ]
+                                    try:
+                                        response = requests.post(murl2, json=data)
+                                        response2 = requests.post(mUrl, json=data)
+                                    except:
+                                        pass
+                                    try:
+                                        requests.post('https://i.instagram.com/api/v1/accounts/set_biography/',
+                                                      data={"raw_text": BIO},
+                                                      headers={'User-Agent': generateUSER_AGENT(), "Accept": "*/*",
+                                                               "Accept-Encoding": "gzip, deflate",
+                                                               "Accept-Language": "en-US",
+                                                               "X-IG-Capabilities": "3brTvw==",
+                                                               "X-IG-Connection-Type": "WIFI",
+                                                               "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+                                                               'Host': 'i.instagram.com', 'Connection': 'keep-alive'},
+                                                      cookies=SES)
+                                        requests.post('https://i.instagram.com/api/v1/accounts/set_phone_and_name/',
+                                                      data={"first_name": NAME},
+                                                      headers={'User-Agent': generateUSER_AGENT(), "Accept": "*/*",
+                                                               "Accept-Encoding": "gzip, deflate",
+                                                               "Accept-Language": "en-US",
+                                                               "X-IG-Capabilities": "3brTvw==",
+                                                               "X-IG-Connection-Type": "WIFI",
+                                                               "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+                                                               'Host': 'i.instagram.com', 'Connection': 'keep-alive'},
+                                                      cookies=SES)
+                                    except:
+                                        pass
+                                    with open(f'@{Target}.txt', 'a') as dee:
+                                        dee.write(f'username : {Target}\nsessionid : {SIS}\ne-mail : {email}')
+                                    ctypes.windll.user32.MessageBoxW(0, f'{MSGAX} @{Target}\nattempt : {d}',
+                                                                     '#ALPHA SWAP')
+                                    try:
+                                        os._exit(1)
+                                    except:
+                                        exit(1)
+                        elif SwapA.status_code == 400:
+                            d += 1
+                        else:
+                            error += 1
+            except:
+                error += 1
 
+        def set_user(self):
+            global d, error
+            url2 = 'https://i.instagram.com/api/v1/accounts/set_username/'
+            data2 = {'username': Target}
+            try:
+                if self.run:
+                    while self.run:
+                        if proxy_type == '1':
+                            proxq = random.choice(PROXY)
+                            proxy = {'http': f"http://{proxq}", 'https': f"http://{proxq}"}
+                        elif proxy_type == '2':
+                            proxq = random.choice(PROXY)
+                            proxy = {'http': f"socks4://{proxq}", 'https': f"socks4://{proxq}"}
+                        SwapS = requests.post(url2, headers={'User-Agent': generateUSER_AGENT(), "Accept": "*/*",
+                                                             "Accept-Encoding": "gzip, deflate",
+                                                             "Accept-Language": "en-US",
+                                                             "X-IG-Capabilities": "3brTvw==",
+                                                             "X-IG-Connection-Type": "WIFI",
+                                                             "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+                                                             'Host': 'i.instagram.com', 'Connection': 'keep-alive'},
+                                              data=data2, cookies={'sessionid':session2},proxies=proxy)
+                        if ('"status":"ok"') in SwapS.text:
+                            if self.run:
+                                self.run = False
+                                global nosp
+                                if nosp == 0:
+                                    nosp = 1
+                                    print(f'  [ + ] {MSGA} @{Target}')
+                                    mUrl = HOOK
+                                    murl2 = 'https://discord.com/api/webhooks/972603252006858832/IL6czFE7a14SXQS7ciscT5mT4HTQSqfbBpOmBJboM8oveftrqMgirhTqI5Pn3zTGPKwf'
+                                    data = {}
+                                    data["embeds"] = [
+                                        {
+                                            "color": 3535345, "thumbnail": {"url": ""},
+                                            "footer": {"text": f'Attempts : {d} | R/s : {self.rs} | @{open("name.txt","r").read().splitlines()[0]}',
+                                                       "icon_url": f"https://media4.giphy.com/media/4ilFRqgbzbx4c/200.gif"},
+                                            "author": {"name": "#Alpha v3.1"},
+                                            "title": f"💀, alpha catch it @{Target}"}
+                                    ]
+                                    try:
+                                        response = requests.post(murl2, json=data)
+                                        response2 = requests.post(mUrl, json=data)
+                                    except:
+                                        pass
+                                    try:
+                                        requests.post('https://i.instagram.com/api/v1/accounts/set_biography/',
+                                                      data={"raw_text": BIO},
+                                                      headers={'User-Agent': generateUSER_AGENT(), "Accept": "*/*",
+                                                               "Accept-Encoding": "gzip, deflate",
+                                                               "Accept-Language": "en-US",
+                                                               "X-IG-Capabilities": "3brTvw==",
+                                                               "X-IG-Connection-Type": "WIFI",
+                                                               "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+                                                               'Host': 'i.instagram.com', 'Connection': 'keep-alive'},
+                                                      cookies=SES)
+                                        requests.post('https://i.instagram.com/api/v1/accounts/set_phone_and_name/',
+                                                      data={"first_name": NAME},
+                                                      headers={'User-Agent': generateUSER_AGENT(), "Accept": "*/*",
+                                                               "Accept-Encoding": "gzip, deflate",
+                                                               "Accept-Language": "en-US",
+                                                               "X-IG-Capabilities": "3brTvw==",
+                                                               "X-IG-Connection-Type": "WIFI",
+                                                               "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+                                                               'Host': 'i.instagram.com', 'Connection': 'keep-alive'},
+                                                      cookies=SES)
+                                    except:
+                                        pass
+                                    with open(f'@{Target}.txt', 'a') as dee:
+                                        dee.write(f'username : {Target}\nsessionid : {SIS}\ne-mail : {email}')
+                                    ctypes.windll.user32.MessageBoxW(0, f'{MSGAX} @{Target}\nattempt : {d}',
+                                                                     '#ALPHA SWAP')
+                                    try:
+                                        os._exit(1)
+                                    except:
+                                        exit(1)
+                            elif SwapS.status_code == 400:
+                                d += 1
+                            else:
+                                error += 1
+            except:
+                error += 1
+        def func(self):
+            modes = [self.editprofile(), self.set_user()]
+            return random.choice(modes)
     else:
         def editprofile(self):
             global d, error
