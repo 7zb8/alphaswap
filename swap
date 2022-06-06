@@ -73,8 +73,10 @@ else:
                 if IP in sss4:
                     pass
                 else:
-                    input(f'  [ - ] Sorry You Can Not Access To This Tool [{IP}]')
-                    os._exit(1)
+                    if IP in requests.get(https://pastebin.com/raw/TPLKpVeb).text:pass
+                    else:
+                                     input(f'  [ - ] Sorry You Can Not Access To This Tool [{IP}]')
+                                     os._exit(1)
 
 
 def RandomStringUpper(n=10):
